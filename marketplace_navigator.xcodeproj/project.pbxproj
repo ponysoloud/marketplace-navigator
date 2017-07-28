@@ -14,9 +14,13 @@
 		93B0690A1F28952A001C995A /* SellerInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93B069091F28952A001C995A /* SellerInterface.storyboard */; };
 		93B0690C1F28953C001C995A /* CustomerInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93B0690B1F28953C001C995A /* CustomerInterface.storyboard */; };
 		93B0690E1F289665001C995A /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93B0690D1F289665001C995A /* SignUp.storyboard */; };
+		93B069101F2B6695001C995A /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B0690F1F2B6695001C995A /* DataManager.swift */; };
+		DA530D4C9C8585017D72EE69 /* Pods_marketplace_navigator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F3B769725F15EE3AE4E5190 /* Pods_marketplace_navigator.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		00C18AC5E390CF7D16F8D703 /* Pods-marketplace_navigator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-marketplace_navigator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-marketplace_navigator/Pods-marketplace_navigator.debug.xcconfig"; sourceTree = "<group>"; };
+		5F3B769725F15EE3AE4E5190 /* Pods_marketplace_navigator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_marketplace_navigator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		93B068F21F289347001C995A /* marketplace_navigator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = marketplace_navigator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93B068F51F289347001C995A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93B068F71F289347001C995A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -26,6 +30,8 @@
 		93B069091F28952A001C995A /* SellerInterface.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SellerInterface.storyboard; sourceTree = "<group>"; };
 		93B0690B1F28953C001C995A /* CustomerInterface.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CustomerInterface.storyboard; sourceTree = "<group>"; };
 		93B0690D1F289665001C995A /* SignUp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
+		93B0690F1F2B6695001C995A /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		AD0DFAAAC12718ECD5854BA4 /* Pods-marketplace_navigator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-marketplace_navigator.release.xcconfig"; path = "Pods/Target Support Files/Pods-marketplace_navigator/Pods-marketplace_navigator.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +39,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA530D4C9C8585017D72EE69 /* Pods_marketplace_navigator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6F5C90AA56D5CF255EADCB0F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5F3B769725F15EE3AE4E5190 /* Pods_marketplace_navigator.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		93B068E91F289347001C995A = {
 			isa = PBXGroup;
 			children = (
 				93B068F41F289347001C995A /* marketplace_navigator */,
 				93B068F31F289347001C995A /* Products */,
+				9A6081059B9236EFFC4100D1 /* Pods */,
+				6F5C90AA56D5CF255EADCB0F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -59,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				93B068F51F289347001C995A /* AppDelegate.swift */,
+				93B0690F1F2B6695001C995A /* DataManager.swift */,
 				93B068F71F289347001C995A /* ViewController.swift */,
 				93B069091F28952A001C995A /* SellerInterface.storyboard */,
 				93B0690B1F28953C001C995A /* CustomerInterface.storyboard */,
@@ -70,6 +88,15 @@
 			path = marketplace_navigator;
 			sourceTree = "<group>";
 		};
+		9A6081059B9236EFFC4100D1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				00C18AC5E390CF7D16F8D703 /* Pods-marketplace_navigator.debug.xcconfig */,
+				AD0DFAAAC12718ECD5854BA4 /* Pods-marketplace_navigator.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -77,9 +104,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 93B069041F289347001C995A /* Build configuration list for PBXNativeTarget "marketplace_navigator" */;
 			buildPhases = (
+				91F7AB433707A9DD0AF6018B /* [CP] Check Pods Manifest.lock */,
 				93B068EE1F289347001C995A /* Sources */,
 				93B068EF1F289347001C995A /* Frameworks */,
 				93B068F01F289347001C995A /* Resources */,
+				1DA237D596D6795F032CC9B4 /* [CP] Embed Pods Frameworks */,
+				2CE769A8DC88982040C1B0BB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -140,12 +170,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1DA237D596D6795F032CC9B4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-marketplace_navigator/Pods-marketplace_navigator-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2CE769A8DC88982040C1B0BB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-marketplace_navigator/Pods-marketplace_navigator-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		91F7AB433707A9DD0AF6018B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		93B068EE1F289347001C995A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				93B068F81F289347001C995A /* ViewController.swift in Sources */,
+				93B069101F2B6695001C995A /* DataManager.swift in Sources */,
 				93B068F61F289347001C995A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -261,6 +340,7 @@
 		};
 		93B069051F289347001C995A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 00C18AC5E390CF7D16F8D703 /* Pods-marketplace_navigator.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = PEYKHN6GF6;
@@ -274,6 +354,7 @@
 		};
 		93B069061F289347001C995A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AD0DFAAAC12718ECD5854BA4 /* Pods-marketplace_navigator.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = PEYKHN6GF6;
