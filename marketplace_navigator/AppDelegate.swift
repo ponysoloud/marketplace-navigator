@@ -16,6 +16,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        
+        var storyboardName: String = "Authorization"
+        
+        if DataSource.checkUserInMemory() {
+            DataSource.loadUser { success, error in
+                
+                if success {
+                    if let _ = DataSource.user as? SellerUser {
+                        storyboardName = "SellerInterface"
+                    } else {
+                        storyboardName = "CustomerInterface"
+                    }
+                }
+                
+                let storyboard = UIStoryboard(name: storyboardName, bundle: nil)
+                let vc = storyboard.instantiateViewController(withIdentifier: "entryVC")
+                self.window?.rootViewController = vc
+            }
+        } else {
+            let storyboard = UIStoryboard(name: storyboardName, bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "entryVC")
+            self.window?.rootViewController = vc
+        }
+        
+        UINavigationBar.appearance().shadowImage = UIImage ()
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
         return true
     }
 
