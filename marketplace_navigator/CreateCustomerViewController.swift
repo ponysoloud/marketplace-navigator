@@ -73,7 +73,6 @@ class CreateCustomerViewController: UIViewController, UITextFieldDelegate {
             
         }
         
-        
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) {
             (result : UIAlertAction) -> Void in
             

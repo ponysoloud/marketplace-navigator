@@ -12,6 +12,11 @@
 		932120A61F34C46F00E8BE50 /* CreateSellerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932120A51F34C46F00E8BE50 /* CreateSellerViewController.swift */; };
 		932120A81F34C48B00E8BE50 /* CreateCustomerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932120A71F34C48B00E8BE50 /* CreateCustomerViewController.swift */; };
 		9367F36E1F3F6D3F00985E97 /* SellerItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9367F36D1F3F6D3F00985E97 /* SellerItemCell.swift */; };
+		9367F3711F4356CB00985E97 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9367F3701F4356CB00985E97 /* Location.swift */; };
+		9367F3741F43621C00985E97 /* CustomerItemsChoosingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9367F3731F43621C00985E97 /* CustomerItemsChoosingViewController.swift */; };
+		9367F3761F44BB8300985E97 /* UIDeviceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9367F3751F44BB8300985E97 /* UIDeviceExtension.swift */; };
+		9367F3781F45F79D00985E97 /* ItemCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9367F3771F45F79D00985E97 /* ItemCard.swift */; };
+		9367F37A1F45F8C500985E97 /* ItemCardStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9367F3791F45F8C500985E97 /* ItemCardStore.swift */; };
 		93ADFBA11F31DB0900692060 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93ADFBA01F31DB0900692060 /* User.swift */; };
 		93ADFBA31F31DB1F00692060 /* SellerUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93ADFBA21F31DB1F00692060 /* SellerUser.swift */; };
 		93ADFBA51F31DF0900692060 /* CustomerUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93ADFBA41F31DF0900692060 /* CustomerUser.swift */; };
@@ -40,6 +45,11 @@
 		932120A51F34C46F00E8BE50 /* CreateSellerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateSellerViewController.swift; sourceTree = "<group>"; };
 		932120A71F34C48B00E8BE50 /* CreateCustomerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateCustomerViewController.swift; sourceTree = "<group>"; };
 		9367F36D1F3F6D3F00985E97 /* SellerItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SellerItemCell.swift; sourceTree = "<group>"; };
+		9367F3701F4356CB00985E97 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		9367F3731F43621C00985E97 /* CustomerItemsChoosingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerItemsChoosingViewController.swift; sourceTree = "<group>"; };
+		9367F3751F44BB8300985E97 /* UIDeviceExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIDeviceExtension.swift; sourceTree = "<group>"; };
+		9367F3771F45F79D00985E97 /* ItemCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCard.swift; sourceTree = "<group>"; };
+		9367F3791F45F8C500985E97 /* ItemCardStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCardStore.swift; sourceTree = "<group>"; };
 		93ADFBA01F31DB0900692060 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		93ADFBA21F31DB1F00692060 /* SellerUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SellerUser.swift; sourceTree = "<group>"; };
 		93ADFBA41F31DF0900692060 /* CustomerUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerUser.swift; sourceTree = "<group>"; };
@@ -90,6 +100,14 @@
 			name = "Data Manager";
 			sourceTree = "<group>";
 		};
+		9367F3721F435FA200985E97 /* Customer */ = {
+			isa = PBXGroup;
+			children = (
+				9367F3731F43621C00985E97 /* CustomerItemsChoosingViewController.swift */,
+			);
+			name = Customer;
+			sourceTree = "<group>";
+		};
 		93ADFBAC1F31EC2D00692060 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +119,9 @@
 				93CA25EB1F3B63D700D4B0B8 /* Item.swift */,
 				93CA25ED1F3B63E000D4B0B8 /* ItemStore.swift */,
 				93CA25EF1F3E16DA00D4B0B8 /* ItemStoreDelegate.swift */,
+				9367F3771F45F79D00985E97 /* ItemCard.swift */,
+				9367F3791F45F8C500985E97 /* ItemCardStore.swift */,
+				9367F3701F4356CB00985E97 /* Location.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -127,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				93B068F51F289347001C995A /* AppDelegate.swift */,
+				9367F3751F44BB8300985E97 /* UIDeviceExtension.swift */,
 				9367F36F1F40D89200985E97 /* Data Manager */,
 				93ADFBAC1F31EC2D00692060 /* Model */,
 				93CA25E51F3B575500D4B0B8 /* Controller */,
@@ -146,6 +168,7 @@
 				93ADFBB11F31FF4F00692060 /* LogInViewContoller.swift */,
 				932120A51F34C46F00E8BE50 /* CreateSellerViewController.swift */,
 				932120A71F34C48B00E8BE50 /* CreateCustomerViewController.swift */,
+				9367F3721F435FA200985E97 /* Customer */,
 				93CA25E61F3B576000D4B0B8 /* Seller */,
 			);
 			name = Controller;
@@ -297,16 +320,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9367F37A1F45F8C500985E97 /* ItemCardStore.swift in Sources */,
 				93CA25E21F3B2D9400D4B0B8 /* SellerAddGoodViewController.swift in Sources */,
 				932120A81F34C48B00E8BE50 /* CreateCustomerViewController.swift in Sources */,
 				93CA25E41F3B30FA00D4B0B8 /* SellerGoodsTableViewController.swift in Sources */,
 				93CA25EC1F3B63D700D4B0B8 /* Item.swift in Sources */,
+				9367F3711F4356CB00985E97 /* Location.swift in Sources */,
+				9367F3761F44BB8300985E97 /* UIDeviceExtension.swift in Sources */,
 				93CA25EE1F3B63E000D4B0B8 /* ItemStore.swift in Sources */,
 				93ADFBB21F31FF4F00692060 /* LogInViewContoller.swift in Sources */,
 				93ADFBA51F31DF0900692060 /* CustomerUser.swift in Sources */,
 				93ADFBAE1F31ED3300692060 /* CustomResponse.swift in Sources */,
+				9367F3781F45F79D00985E97 /* ItemCard.swift in Sources */,
 				93ADFBA11F31DB0900692060 /* User.swift in Sources */,
 				93CA25F01F3E16DA00D4B0B8 /* ItemStoreDelegate.swift in Sources */,
+				9367F3741F43621C00985E97 /* CustomerItemsChoosingViewController.swift in Sources */,
 				93B069101F2B6695001C995A /* DataManager.swift in Sources */,
 				93ADFBA31F31DB1F00692060 /* SellerUser.swift in Sources */,
 				93ADFBB01F31FCF700692060 /* DataSource.swift in Sources */,

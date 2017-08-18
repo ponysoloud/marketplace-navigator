@@ -123,7 +123,10 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hRZ-78-GdW">
                                 <rect key="frame" x="100" y="393" width="188" height="172"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Set current location and make finding available"/>
+                                <state key="normal" title="Set current location"/>
+                                <connections>
+                                    <action selector="setPosition:" destination="5sl-lu-cwN" eventType="touchUpInside" id="34h-JP-Q4Q"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

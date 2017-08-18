@@ -21,46 +21,36 @@ class LogInViewContoller: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var logInButton: UIButton!
     
+    @IBOutlet var keyboardHeightLayoutConstraint: NSLayoutConstraint?
+    
+    @IBOutlet weak var imageSizeLayoutConstraint: NSLayoutConstraint!
+    
     var flags = Array(repeating: false, count: 2) {
-        
         didSet {
             logInButton.isEnabled = !flags.contains(false)
         }
     }
     
-    @IBOutlet var keyboardHeightLayoutConstraint: NSLayoutConstraint?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if UIDevice.current.screenType == .iPhone5_5c_5s {
+            imageSizeLayoutConstraint.constant = 0
+        }
+        
+        if UIDevice.current.screenType == .iPhoneP {
+            imageSizeLayoutConstraint.constant = 80
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardNotification(notification:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
         NotificationCenter.default.removeObserver(self)
-    }
-    
-    @objc func keyboardNotification(notification: NSNotification) {
-        
-        if let userInfo = notification.userInfo {
-            let endFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
-            let duration:TimeInterval = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue ?? 0
-            let animationCurveRawNSN = userInfo[UIKeyboardAnimationCurveUserInfoKey] as? NSNumber
-            let animationCurveRaw = animationCurveRawNSN?.uintValue ?? UIViewAnimationOptions.curveEaseInOut.rawValue
-            let animationCurve:UIViewAnimationOptions = UIViewAnimationOptions(rawValue: animationCurveRaw)
-            if (endFrame?.origin.y)! >= UIScreen.main.bounds.size.height {
-                self.keyboardHeightLayoutConstraint?.constant = 70.0
-            } else {
-                self.keyboardHeightLayoutConstraint?.constant = endFrame?.size.height ?? 70.0
-            }
-            UIView.animate(withDuration: duration,
-                           delay: TimeInterval(0),
-                           options: animationCurve,
-                           animations: { self.view.layoutIfNeeded() },
-                           completion: nil)
-        }
     }
     
     @IBAction func logIn(_ sender: Any) {
@@ -93,6 +83,27 @@ class LogInViewContoller: UIViewController, UITextFieldDelegate {
                     }
                 }
             }
+        }
+    }
+    
+    @objc func keyboardNotification(notification: NSNotification) {
+        
+        if let userInfo = notification.userInfo {
+            let endFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
+            let duration:TimeInterval = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue ?? 0
+            let animationCurveRawNSN = userInfo[UIKeyboardAnimationCurveUserInfoKey] as? NSNumber
+            let animationCurveRaw = animationCurveRawNSN?.uintValue ?? UIViewAnimationOptions.curveEaseInOut.rawValue
+            let animationCurve:UIViewAnimationOptions = UIViewAnimationOptions(rawValue: animationCurveRaw)
+            if (endFrame?.origin.y)! >= UIScreen.main.bounds.size.height {
+                self.keyboardHeightLayoutConstraint?.constant = 70.0
+            } else {
+                self.keyboardHeightLayoutConstraint?.constant = endFrame?.size.height ?? 70.0
+            }
+            UIView.animate(withDuration: duration,
+                           delay: TimeInterval(0),
+                           options: animationCurve,
+                           animations: { self.view.layoutIfNeeded() },
+                           completion: nil)
         }
     }
     

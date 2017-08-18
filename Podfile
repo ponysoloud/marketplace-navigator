@@ -4,4 +4,6 @@ use_frameworks!
 
 target ‘marketplace_navigator’ do
     pod 'Alamofire', '~> 4.4'
+    pod "Koloda"
+
 end

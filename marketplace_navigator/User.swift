@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreLocation
 
 class User: GoodResponse {
     
@@ -30,9 +31,7 @@ class User: GoodResponse {
     var idToken: String = ""
     var name: String = ""
     var image: String = ""
-    var location: String?
-    
-    
+    var location: Location?
     
     var email: String = ""
     var password: String = ""
@@ -60,8 +59,8 @@ class User: GoodResponse {
             self.image = image
         }
         
-        if let location = json["location"] as? String {
-            self.location = location
+        if let location = json["location"] as? [String: Any] {
+            self.location = Location(location)
         }
     }
     

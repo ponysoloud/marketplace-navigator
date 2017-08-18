@@ -78,7 +78,6 @@ class GoodResponse: CustomResponse {
         }
         
         if rType == "user" {
-            
             if let info = json["info"] as? [String: Any] {
                 return User.create(params: params, json: info)
             }
@@ -89,6 +88,18 @@ class GoodResponse: CustomResponse {
                 return Item(json: info)
             }
             
+        }
+        
+        if rType == "location" {
+            if let info = json["info"] as? [String: Any] {
+                return Location(info)
+            }
+        }
+        
+        if rType == "searching" {
+            if let info = json["info"] as? [String: Any] {
+                return ItemCardStore(json: info)
+            }
         }
         
         if rType == "empty" {

@@ -11,7 +11,6 @@ import UIKit
 
 class SellerGoodsTableViewController: UITableViewController, ItemStoreDelegate {
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,4 +36,5 @@ class SellerGoodsTableViewController: UITableViewController, ItemStoreDelegate {
         let indexPath = IndexPath(row: index, section: 0)
         tableView.insertRows(at: [indexPath], with: .automatic)
     }
+    
 }

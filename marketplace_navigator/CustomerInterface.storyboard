@@ -24,13 +24,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RW6-Lk-fCB">
-                                <rect key="frame" x="116" y="98" width="143" height="143"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="RW6-Lk-fCB" secondAttribute="height" multiplier="1:1" id="aW5-gB-oJp"/>
-                                </constraints>
+                                <rect key="frame" x="116" y="98" width="143" height="144"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CustomerName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bVr-4g-7G4">
-                                <rect key="frame" x="104" y="275" width="168" height="30"/>
+                                <rect key="frame" x="104" y="276" width="168" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -47,8 +44,9 @@
                             <constraint firstAttribute="trailingMargin" secondItem="RW6-Lk-fCB" secondAttribute="trailing" constant="100" id="2hd-nq-zmJ"/>
                             <constraint firstItem="RW6-Lk-fCB" firstAttribute="leading" secondItem="Jez-Ej-IHf" secondAttribute="leadingMargin" constant="100" id="AbL-yb-2AW"/>
                             <constraint firstItem="RW6-Lk-fCB" firstAttribute="top" secondItem="E6e-dj-wLn" secondAttribute="bottom" constant="78" id="GRR-le-3Sw"/>
-                            <constraint firstItem="bVr-4g-7G4" firstAttribute="centerX" secondItem="Jez-Ej-IHf" secondAttribute="centerX" id="LbF-YQ-KYl"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bVr-4g-7G4" secondAttribute="trailing" constant="87" id="Jj6-hP-jO7"/>
                             <constraint firstItem="A4f-VX-jBO" firstAttribute="centerX" secondItem="Jez-Ej-IHf" secondAttribute="centerX" id="XVl-ss-FKQ"/>
+                            <constraint firstItem="bVr-4g-7G4" firstAttribute="leading" secondItem="Jez-Ej-IHf" secondAttribute="leadingMargin" constant="88" id="XZE-EE-VYf"/>
                             <constraint firstItem="A4f-VX-jBO" firstAttribute="top" secondItem="bVr-4g-7G4" secondAttribute="bottom" constant="4" id="Yft-bk-aBh"/>
                             <constraint firstItem="IoF-ah-9dq" firstAttribute="top" secondItem="bVr-4g-7G4" secondAttribute="bottom" constant="313" id="fcv-hK-15Y"/>
                             <constraint firstItem="bVr-4g-7G4" firstAttribute="top" secondItem="RW6-Lk-fCB" secondAttribute="bottom" constant="34" id="qaj-2f-ayA"/>
@@ -82,7 +80,7 @@
         <!--Choose-->
         <scene sceneID="w5Z-Fr-oLw">
             <objects>
-                <viewController id="UZi-s1-Ux8" sceneMemberID="viewController">
+                <viewController id="UZi-s1-Ux8" customClass="CustomerItemsChoosingViewController" customModule="marketplace_navigator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FbL-YY-hSa"/>
                         <viewControllerLayoutGuide type="bottom" id="929-li-zaE"/>

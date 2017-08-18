@@ -41,6 +41,27 @@ class SellerProfileViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.requestLocation()
     }
     
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        let loc = locations.last!
+        Location.getCountry(location: loc) { code, error in
+            if (code == nil) {
+                // Change UI
+                return
+            }
+            
+            DataSource.setLocation(idToken: DataSource.user!.idToken, latitude: loc.coordinate.latitude, longitude: loc.coordinate.longitude, country: code!) { success in
+                
+                //...
+                print(DataSource.user?.location?.location)
+                
+            }
+        }
+
+    }
     
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error)
+    }
     
 }

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreLocation
 
 enum Gender: String {
     
@@ -45,6 +46,8 @@ class DataSource {
     
     public static var user: User?
     
+    public static var itemCards: ItemCardStore?
+    
     static func saveUser() {
         UserDefaults.standard.set(user?.toDictionary(), forKey: "CurrentUser")
         UserDefaults.standard.synchronize()
@@ -52,7 +55,7 @@ class DataSource {
     
     static func removeUser() {
         user = nil
-        UserDefaults.standard.removeObject(forKey: "CurrentCar")
+        UserDefaults.standard.removeObject(forKey: "CurrentUser")
         UserDefaults.standard.synchronize()
     }
     
@@ -135,30 +138,57 @@ class DataSource {
         
         DataManager.addItem(idToken: idToken, name: name, gender: gender, category: category, price: price) { response in
             
-            if let resp = response as? GoodResponse {
-                if let item = resp as? Item {
-                    (user as! SellerUser).items.add(item: item)
-                    completion(true)
-                    return
-                }
+            if let item = response as? Item {
+                (user as! SellerUser).items.add(item: item)
+                completion(true)
+                return
             }
+            
             completion(false)
         }
         
     }
     
+    static func setLocation(idToken: String, latitude: CLLocationDegrees, longitude: CLLocationDegrees, country: String, completion: @escaping (Bool) -> Void) {
+        
+        let la = "\(latitude)"
+        let lo = "\(longitude)"
+        
+        DataManager.setLocation(idToken: idToken, latitude: la, longitude: lo, country: country) { response in
+            
+            if let loc = response as? Location {
+                user?.location = loc
+                completion(true)
+                return
+            }
+            
+            completion(false)
+        }
+    }
     
+    class func getItems(idToken: String, latitude: CLLocationDegrees, longitude: CLLocationDegrees, country: String, completion: @escaping (Bool) -> Void) {
+        
+        let la = "\(latitude)"
+        let lo = "\(longitude)"
+        
+        DataManager.getItems(idToken: idToken, latitude: la, longitude: lo, country: country) { response in
+            
+            if let items = response as? ItemCardStore {
+                itemCards = items
+                completion(true)
+                return
+            }
+            
+            completion(false)
+        }
+    }
     
     private static func authUserHandler(response: CustomResponse) -> (Bool, BadResponse?) {
         
-        if let resp = response as? GoodResponse {
-            if let user = resp as? User {
-                self.user = user
-                saveUser()
-                return (true, nil)
-            }
-            
-            fatalError("Unexpected server response")
+        if let user = response as? User {
+            self.user = user
+            saveUser()
+            return (true, nil)
         }
         
         if let resp = response as? BadResponse {

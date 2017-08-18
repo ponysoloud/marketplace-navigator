@@ -74,9 +74,17 @@ class DataManager {
         
     }
     
-    class func setLocation(idToken: String, location: String, completion: @escaping (CustomResponse) -> Void) {
-        DataManager.request(url: "setlocation", method: .post, parameters: ["idToken": idToken, "location": location]) {
+    class func setLocation(idToken: String, latitude: String, longitude: String, country: String, completion: @escaping (CustomResponse) -> Void) {
+        DataManager.request(url: "setlocation", method: .post, parameters: ["idToken": idToken, "latitude": latitude, "longitude": longitude, "country": country]) {
             json in
+            
+            let response = CustomResponse.create(params: [:], json: json)
+            completion(response)
+        }
+    }
+    
+    class func getItems(idToken: String, latitude: String, longitude: String, country: String, completion: @escaping (CustomResponse) -> Void) {
+        DataManager.request(url: "getitems", method: .post, parameters: ["idToken": idToken, "latitude": latitude, "longitude": longitude, "country": country]) { json in
             
             let response = CustomResponse.create(params: [:], json: json)
             completion(response)

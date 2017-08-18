@@ -70,6 +70,9 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HIh-Wj-uRw">
                                         <rect key="frame" x="68" y="171" width="98" height="46"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="98" id="P8x-89-DSB"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                         <state key="normal" title="Log in">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -135,7 +138,7 @@
                                     <constraint firstItem="q3E-eG-9Xm" firstAttribute="top" secondItem="OpU-8q-PEe" secondAttribute="bottom" constant="4" id="bCr-hJ-nD7"/>
                                     <constraint firstItem="J6d-1c-Tgv" firstAttribute="top" secondItem="Wd8-jW-86L" secondAttribute="top" constant="23" id="bcl-nX-5uS"/>
                                     <constraint firstItem="1GK-2t-7fZ" firstAttribute="leading" secondItem="Wd8-jW-86L" secondAttribute="leading" constant="72" id="fh9-DX-Q0x"/>
-                                    <constraint firstAttribute="trailing" secondItem="HIh-Wj-uRw" secondAttribute="trailing" constant="177" id="nkO-H9-4W8"/>
+                                    <constraint firstAttribute="trailing" secondItem="HIh-Wj-uRw" secondAttribute="trailing" priority="800" constant="177" id="nkO-H9-4W8"/>
                                     <constraint firstAttribute="trailing" secondItem="OpU-8q-PEe" secondAttribute="trailing" constant="26" id="tpu-Yw-Tb2"/>
                                     <constraint firstAttribute="trailing" secondItem="q3E-eG-9Xm" secondAttribute="trailing" constant="26" id="wfy-6d-HV1"/>
                                 </constraints>
@@ -169,6 +172,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Znc-z3-tOI"/>
                     <connections>
+                        <outlet property="imageSizeLayoutConstraint" destination="RYT-Iy-i7b" id="non-j4-LeV"/>
                         <outlet property="keyboardHeightLayoutConstraint" destination="OAQ-tq-vWu" id="Xii-5N-8mh"/>
                         <outlet property="logInButton" destination="HIh-Wj-uRw" id="TGa-Vr-caa"/>
                         <outlet property="mailTextField" destination="J6d-1c-Tgv" id="H2V-lc-D3C"/>
