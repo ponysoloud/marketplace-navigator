@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-
+/*
 class SellerGoodsTableViewController: UITableViewController, ItemStoreDelegate {
 
     override func viewDidLoad() {
@@ -32,9 +32,9 @@ class SellerGoodsTableViewController: UITableViewController, ItemStoreDelegate {
         return cell
     }
     
-    func itemStore(_ itemStore: ItemStore, didUpdatedWith index: Int) {
+    func itemStore(didUpdatedWith index: Int) {
         let indexPath = IndexPath(row: index, section: 0)
         tableView.insertRows(at: [indexPath], with: .automatic)
     }
     
-}
+}*/

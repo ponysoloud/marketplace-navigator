@@ -7,12 +7,15 @@
 //
 
 import Foundation
+import Koloda
 
 class ItemCardStore: GoodResponse {
     
     var cards = [ItemCard]()
     
-    private var usedIds = [String]()
+    private var buffer = [ItemCard]()
+    
+    var count: Int { get { return cards.count } }
     
     subscript(index:Int) -> ItemCard {
         get {
@@ -23,42 +26,72 @@ class ItemCardStore: GoodResponse {
         }
     }
     
-    var count: Int {
-        get {
-            return cards.count
-        }
-    }
-    
-    override init() {
-        
-    }
-    
     init(json: [String: Any]) {
         for i in json {
             if let temp = i.value as? [String: Any] {
-                self.cards.append(ItemCard(json: temp))
-            }
-        }
-    }
-    
-    func update(json: [String: Any]) {
-        for i in json {
-            if let temp = i.value as? [String: Any] {
-                let item = ItemCard(json: temp)
-                if !usedIds.contains(item.itemId) {
-                    self.cards.append(item)
+                let card = ItemCard(json: temp)
+                    card.id = i.key
+                
+                if !(DataSource.user! as! CustomerUser).likedItems.contains(item: card) {
+                    self.cards.append(card)
                 }
             }
         }
     }
     
-    func add(item: ItemCard) {
-        cards.append(item)
+    func append(json: [String: Any]) {
+        for i in json {
+            if let temp = i.value as? [String: Any] {
+                let card = ItemCard(json: temp)
+                    card.id = i.key
+                if self.contains(item: card) {
+                    self.buffer.append(card)
+                }
+            }
+        }
     }
     
-    func remove(at: Int) {
-        usedIds.append(cards[at].itemId)
-        cards.remove(at: at)
+    func append(store: ItemCardStore) {
+        for i in store.cards {
+            if !self.contains(item: i) {
+                if !(DataSource.user! as! CustomerUser).likedItems.contains(item: i) {
+                    self.buffer.append(i)
+                }
+            }
+        }
+    }
+    
+    func transfer() -> Int {
+        let buffCount = buffer.count
+        cards.append(contentsOf: buffer)
+        buffer.removeAll()
+        return buffCount
+    }
+    
+    private func contains(item: ItemCard) -> Bool {
+        let cardsContains = cards.contains(where: { $0.id == item.id })
+        let bufferContains = buffer.contains(where: { $0.id == item.id })
+        return cardsContains || bufferContains
+    }
+    
+}
+
+extension ItemCardStore: KolodaViewDataSource {
+    
+    func kolodaNumberOfCards(_ koloda: KolodaView) -> Int {
+        return cards.count
+    }
+    
+    func kolodaSpeedThatCardShouldDrag(_ koloda: KolodaView) -> DragSpeed {
+        return .default
+    }
+    
+    func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView {
+        return CardView(card: cards[index])
+    }
+    
+    func koloda(_ koloda: KolodaView, viewForCardOverlayAt index: Int) -> OverlayView? {
+        return Bundle.main.loadNibNamed("OverlayView", owner: self, options: nil)?[0] as? OverlayView
     }
     
 }

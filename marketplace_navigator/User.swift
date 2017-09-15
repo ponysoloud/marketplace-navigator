@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreLocation
+import UIKit
 
 class User: GoodResponse {
     
@@ -30,12 +31,25 @@ class User: GoodResponse {
     
     var idToken: String = ""
     var name: String = ""
-    var image: String = ""
-    var location: Location?
+    
     
     var email: String = ""
     var password: String = ""
-    
+    var profileImage: UIImage? {
+        
+        get {
+            if let image = UserDefaults.standard.object(forKey: "CurrentUserProfileImage") as? NSData {
+                return UIImage(data: image as Data)
+            }
+            
+            return nil
+        }
+        
+        set(image) {
+            let saveImage = UIImagePNGRepresentation(image!) as NSData?
+            UserDefaults.standard.set(saveImage, forKey: "CurrentUserProfileImage")
+        }
+    }
     
     init (params: [String: Any], json: [String:Any]) {
         
@@ -53,14 +67,6 @@ class User: GoodResponse {
         
         if let name = json["name"] as? String {
             self.name = name
-        }
-        
-        if let image = json["image"] as? String {
-            self.image = image
-        }
-        
-        if let location = json["location"] as? [String: Any] {
-            self.location = Location(location)
         }
     }
     

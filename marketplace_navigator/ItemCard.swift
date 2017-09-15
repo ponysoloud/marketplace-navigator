@@ -8,21 +8,22 @@
 
 import Foundation
 
-class ItemCard {
-    
+class ItemCard: Jsonable, Comparable {
     var item: Item!
-    
-    var itemId: String = ""
-    
+    var id: String = "" {
+        didSet {
+            item.id = id
+        }
+    }
+    var shopId: String = ""
     var hostName: String = ""
-    
     var hostKey: String = ""
     
     public var description: String {
         return "Card: \(item.name); \(hostName);"
     }
     
-    init(json: [String: Any]){
+    required init(json: [String: Any]){
         
         if let item = json["item"] as? [String: Any] {
             self.item = Item(json: item)
@@ -34,6 +35,10 @@ class ItemCard {
         
         if let key = json["hostKey"] as? String {
             self.hostKey = key
+        }
+        
+        if let shopId = json["shopId"] as? String {
+            self.shopId = shopId
         }
     }
     

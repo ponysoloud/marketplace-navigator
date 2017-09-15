@@ -11,12 +11,26 @@
 		932120A21F34B5FE00E8BE50 /* Authorization.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 932120A11F34B5FE00E8BE50 /* Authorization.storyboard */; };
 		932120A61F34C46F00E8BE50 /* CreateSellerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932120A51F34C46F00E8BE50 /* CreateSellerViewController.swift */; };
 		932120A81F34C48B00E8BE50 /* CreateCustomerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932120A71F34C48B00E8BE50 /* CreateCustomerViewController.swift */; };
+		93625AA61F6B378500FB3323 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93625AA51F6B378500FB3323 /* StringExtension.swift */; };
 		9367F36E1F3F6D3F00985E97 /* SellerItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9367F36D1F3F6D3F00985E97 /* SellerItemCell.swift */; };
 		9367F3711F4356CB00985E97 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9367F3701F4356CB00985E97 /* Location.swift */; };
 		9367F3741F43621C00985E97 /* CustomerItemsChoosingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9367F3731F43621C00985E97 /* CustomerItemsChoosingViewController.swift */; };
 		9367F3761F44BB8300985E97 /* UIDeviceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9367F3751F44BB8300985E97 /* UIDeviceExtension.swift */; };
 		9367F3781F45F79D00985E97 /* ItemCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9367F3771F45F79D00985E97 /* ItemCard.swift */; };
 		9367F37A1F45F8C500985E97 /* ItemCardStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9367F3791F45F8C500985E97 /* ItemCardStore.swift */; };
+		9367F3801F48657E00985E97 /* OverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9367F37F1F48657E00985E97 /* OverlayView.xib */; };
+		9367F3821F4865D300985E97 /* CustomOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9367F3811F4865D300985E97 /* CustomOverlayView.swift */; };
+		9367F3871F4880B100985E97 /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9367F3861F4880B100985E97 /* CardView.xib */; };
+		9367F3891F48896B00985E97 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9367F3881F48896B00985E97 /* CardView.swift */; };
+		9367F38D1F509FA500985E97 /* CustomerItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9367F38C1F509FA500985E97 /* CustomerItemCell.swift */; };
+		9367F38F1F50A04800985E97 /* CustomerUserGoodsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9367F38E1F50A04800985E97 /* CustomerUserGoodsTableViewController.swift */; };
+		937DE7A71F609F0900AFED6C /* Shop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937DE7A61F609F0900AFED6C /* Shop.swift */; };
+		937DE7A91F61BC7000AFED6C /* CustomerProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937DE7A81F61BC7000AFED6C /* CustomerProfileViewController.swift */; };
+		937DE7AB1F6806D700AFED6C /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937DE7AA1F6806D700AFED6C /* UIImageViewExtension.swift */; };
+		937DE7AD1F68833800AFED6C /* CustomStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937DE7AC1F68833800AFED6C /* CustomStorage.swift */; };
+		937DE7AF1F68837B00AFED6C /* CustomStorageDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937DE7AE1F68837B00AFED6C /* CustomStorageDelegate.swift */; };
+		937DE7B31F688BEC00AFED6C /* Jsonable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937DE7B21F688BEC00AFED6C /* Jsonable.swift */; };
+		937DE7B51F688C1500AFED6C /* Comparable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937DE7B41F688C1500AFED6C /* Comparable.swift */; };
 		93ADFBA11F31DB0900692060 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93ADFBA01F31DB0900692060 /* User.swift */; };
 		93ADFBA31F31DB1F00692060 /* SellerUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93ADFBA21F31DB1F00692060 /* SellerUser.swift */; };
 		93ADFBA51F31DF0900692060 /* CustomerUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93ADFBA41F31DF0900692060 /* CustomerUser.swift */; };
@@ -32,8 +46,6 @@
 		93CA25E21F3B2D9400D4B0B8 /* SellerAddGoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CA25E11F3B2D9400D4B0B8 /* SellerAddGoodViewController.swift */; };
 		93CA25E41F3B30FA00D4B0B8 /* SellerGoodsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CA25E31F3B30FA00D4B0B8 /* SellerGoodsTableViewController.swift */; };
 		93CA25EC1F3B63D700D4B0B8 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CA25EB1F3B63D700D4B0B8 /* Item.swift */; };
-		93CA25EE1F3B63E000D4B0B8 /* ItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CA25ED1F3B63E000D4B0B8 /* ItemStore.swift */; };
-		93CA25F01F3E16DA00D4B0B8 /* ItemStoreDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CA25EF1F3E16DA00D4B0B8 /* ItemStoreDelegate.swift */; };
 		DA530D4C9C8585017D72EE69 /* Pods_marketplace_navigator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F3B769725F15EE3AE4E5190 /* Pods_marketplace_navigator.framework */; };
 /* End PBXBuildFile section */
 
@@ -44,12 +56,26 @@
 		932120A11F34B5FE00E8BE50 /* Authorization.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Authorization.storyboard; sourceTree = "<group>"; };
 		932120A51F34C46F00E8BE50 /* CreateSellerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateSellerViewController.swift; sourceTree = "<group>"; };
 		932120A71F34C48B00E8BE50 /* CreateCustomerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateCustomerViewController.swift; sourceTree = "<group>"; };
+		93625AA51F6B378500FB3323 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		9367F36D1F3F6D3F00985E97 /* SellerItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SellerItemCell.swift; sourceTree = "<group>"; };
 		9367F3701F4356CB00985E97 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		9367F3731F43621C00985E97 /* CustomerItemsChoosingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerItemsChoosingViewController.swift; sourceTree = "<group>"; };
 		9367F3751F44BB8300985E97 /* UIDeviceExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIDeviceExtension.swift; sourceTree = "<group>"; };
 		9367F3771F45F79D00985E97 /* ItemCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCard.swift; sourceTree = "<group>"; };
 		9367F3791F45F8C500985E97 /* ItemCardStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCardStore.swift; sourceTree = "<group>"; };
+		9367F37F1F48657E00985E97 /* OverlayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OverlayView.xib; sourceTree = "<group>"; };
+		9367F3811F4865D300985E97 /* CustomOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomOverlayView.swift; sourceTree = "<group>"; };
+		9367F3861F4880B100985E97 /* CardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
+		9367F3881F48896B00985E97 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		9367F38C1F509FA500985E97 /* CustomerItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerItemCell.swift; sourceTree = "<group>"; };
+		9367F38E1F50A04800985E97 /* CustomerUserGoodsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerUserGoodsTableViewController.swift; sourceTree = "<group>"; };
+		937DE7A61F609F0900AFED6C /* Shop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shop.swift; sourceTree = "<group>"; };
+		937DE7A81F61BC7000AFED6C /* CustomerProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerProfileViewController.swift; sourceTree = "<group>"; };
+		937DE7AA1F6806D700AFED6C /* UIImageViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
+		937DE7AC1F68833800AFED6C /* CustomStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomStorage.swift; sourceTree = "<group>"; };
+		937DE7AE1F68837B00AFED6C /* CustomStorageDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomStorageDelegate.swift; sourceTree = "<group>"; };
+		937DE7B21F688BEC00AFED6C /* Jsonable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Jsonable.swift; sourceTree = "<group>"; };
+		937DE7B41F688C1500AFED6C /* Comparable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comparable.swift; sourceTree = "<group>"; };
 		93ADFBA01F31DB0900692060 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		93ADFBA21F31DB1F00692060 /* SellerUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SellerUser.swift; sourceTree = "<group>"; };
 		93ADFBA41F31DF0900692060 /* CustomerUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerUser.swift; sourceTree = "<group>"; };
@@ -67,8 +93,6 @@
 		93CA25E11F3B2D9400D4B0B8 /* SellerAddGoodViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SellerAddGoodViewController.swift; sourceTree = "<group>"; };
 		93CA25E31F3B30FA00D4B0B8 /* SellerGoodsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SellerGoodsTableViewController.swift; sourceTree = "<group>"; };
 		93CA25EB1F3B63D700D4B0B8 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
-		93CA25ED1F3B63E000D4B0B8 /* ItemStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemStore.swift; sourceTree = "<group>"; };
-		93CA25EF1F3E16DA00D4B0B8 /* ItemStoreDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemStoreDelegate.swift; sourceTree = "<group>"; };
 		AD0DFAAAC12718ECD5854BA4 /* Pods-marketplace_navigator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-marketplace_navigator.release.xcconfig"; path = "Pods/Target Support Files/Pods-marketplace_navigator/Pods-marketplace_navigator.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -92,6 +116,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		93625AA71F6B4A1700FB3323 /* Authorization */ = {
+			isa = PBXGroup;
+			children = (
+				93ADFBB11F31FF4F00692060 /* LogInViewContoller.swift */,
+				932120A51F34C46F00E8BE50 /* CreateSellerViewController.swift */,
+				932120A71F34C48B00E8BE50 /* CreateCustomerViewController.swift */,
+			);
+			name = Authorization;
+			sourceTree = "<group>";
+		};
 		9367F36F1F40D89200985E97 /* Data Manager */ = {
 			isa = PBXGroup;
 			children = (
@@ -103,9 +137,21 @@
 		9367F3721F435FA200985E97 /* Customer */ = {
 			isa = PBXGroup;
 			children = (
+				937DE7A81F61BC7000AFED6C /* CustomerProfileViewController.swift */,
 				9367F3731F43621C00985E97 /* CustomerItemsChoosingViewController.swift */,
+				9367F38E1F50A04800985E97 /* CustomerUserGoodsTableViewController.swift */,
 			);
 			name = Customer;
+			sourceTree = "<group>";
+		};
+		9367F3851F487B3B00985E97 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9367F38C1F509FA500985E97 /* CustomerItemCell.swift */,
+				9367F3881F48896B00985E97 /* CardView.swift */,
+				9367F3811F4865D300985E97 /* CustomOverlayView.swift */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		93ADFBAC1F31EC2D00692060 /* Model */ = {
@@ -116,12 +162,15 @@
 				93ADFBA01F31DB0900692060 /* User.swift */,
 				93ADFBA21F31DB1F00692060 /* SellerUser.swift */,
 				93ADFBA41F31DF0900692060 /* CustomerUser.swift */,
+				937DE7A61F609F0900AFED6C /* Shop.swift */,
 				93CA25EB1F3B63D700D4B0B8 /* Item.swift */,
-				93CA25ED1F3B63E000D4B0B8 /* ItemStore.swift */,
-				93CA25EF1F3E16DA00D4B0B8 /* ItemStoreDelegate.swift */,
+				937DE7AC1F68833800AFED6C /* CustomStorage.swift */,
+				937DE7AE1F68837B00AFED6C /* CustomStorageDelegate.swift */,
 				9367F3771F45F79D00985E97 /* ItemCard.swift */,
 				9367F3791F45F8C500985E97 /* ItemCardStore.swift */,
 				9367F3701F4356CB00985E97 /* Location.swift */,
+				937DE7B21F688BEC00AFED6C /* Jsonable.swift */,
+				937DE7B41F688C1500AFED6C /* Comparable.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -149,14 +198,19 @@
 			children = (
 				93B068F51F289347001C995A /* AppDelegate.swift */,
 				9367F3751F44BB8300985E97 /* UIDeviceExtension.swift */,
+				937DE7AA1F6806D700AFED6C /* UIImageViewExtension.swift */,
+				93625AA51F6B378500FB3323 /* StringExtension.swift */,
 				9367F36F1F40D89200985E97 /* Data Manager */,
 				93ADFBAC1F31EC2D00692060 /* Model */,
 				93CA25E51F3B575500D4B0B8 /* Controller */,
+				9367F3851F487B3B00985E97 /* View */,
 				93B069091F28952A001C995A /* SellerInterface.storyboard */,
 				93B0690B1F28953C001C995A /* CustomerInterface.storyboard */,
 				932120A11F34B5FE00E8BE50 /* Authorization.storyboard */,
-				93B068FC1F289347001C995A /* Assets.xcassets */,
 				93B068FE1F289347001C995A /* LaunchScreen.storyboard */,
+				9367F37F1F48657E00985E97 /* OverlayView.xib */,
+				9367F3861F4880B100985E97 /* CardView.xib */,
+				93B068FC1F289347001C995A /* Assets.xcassets */,
 				93B069011F289347001C995A /* Info.plist */,
 			);
 			path = marketplace_navigator;
@@ -165,9 +219,7 @@
 		93CA25E51F3B575500D4B0B8 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				93ADFBB11F31FF4F00692060 /* LogInViewContoller.swift */,
-				932120A51F34C46F00E8BE50 /* CreateSellerViewController.swift */,
-				932120A71F34C48B00E8BE50 /* CreateCustomerViewController.swift */,
+				93625AA71F6B4A1700FB3323 /* Authorization */,
 				9367F3721F435FA200985E97 /* Customer */,
 				93CA25E61F3B576000D4B0B8 /* Seller */,
 			);
@@ -258,7 +310,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				932120A21F34B5FE00E8BE50 /* Authorization.storyboard in Resources */,
+				9367F3801F48657E00985E97 /* OverlayView.xib in Resources */,
 				93B0690A1F28952A001C995A /* SellerInterface.storyboard in Resources */,
+				9367F3871F4880B100985E97 /* CardView.xib in Resources */,
 				93B069001F289347001C995A /* LaunchScreen.storyboard in Resources */,
 				93B068FD1F289347001C995A /* Assets.xcassets in Resources */,
 				93B0690C1F28953C001C995A /* CustomerInterface.storyboard in Resources */,
@@ -321,26 +375,36 @@
 			buildActionMask = 2147483647;
 			files = (
 				9367F37A1F45F8C500985E97 /* ItemCardStore.swift in Sources */,
+				937DE7B51F688C1500AFED6C /* Comparable.swift in Sources */,
+				937DE7AF1F68837B00AFED6C /* CustomStorageDelegate.swift in Sources */,
 				93CA25E21F3B2D9400D4B0B8 /* SellerAddGoodViewController.swift in Sources */,
+				93625AA61F6B378500FB3323 /* StringExtension.swift in Sources */,
 				932120A81F34C48B00E8BE50 /* CreateCustomerViewController.swift in Sources */,
 				93CA25E41F3B30FA00D4B0B8 /* SellerGoodsTableViewController.swift in Sources */,
 				93CA25EC1F3B63D700D4B0B8 /* Item.swift in Sources */,
 				9367F3711F4356CB00985E97 /* Location.swift in Sources */,
+				937DE7A91F61BC7000AFED6C /* CustomerProfileViewController.swift in Sources */,
+				9367F38D1F509FA500985E97 /* CustomerItemCell.swift in Sources */,
 				9367F3761F44BB8300985E97 /* UIDeviceExtension.swift in Sources */,
-				93CA25EE1F3B63E000D4B0B8 /* ItemStore.swift in Sources */,
 				93ADFBB21F31FF4F00692060 /* LogInViewContoller.swift in Sources */,
+				937DE7A71F609F0900AFED6C /* Shop.swift in Sources */,
+				9367F38F1F50A04800985E97 /* CustomerUserGoodsTableViewController.swift in Sources */,
 				93ADFBA51F31DF0900692060 /* CustomerUser.swift in Sources */,
 				93ADFBAE1F31ED3300692060 /* CustomResponse.swift in Sources */,
+				937DE7AD1F68833800AFED6C /* CustomStorage.swift in Sources */,
 				9367F3781F45F79D00985E97 /* ItemCard.swift in Sources */,
 				93ADFBA11F31DB0900692060 /* User.swift in Sources */,
-				93CA25F01F3E16DA00D4B0B8 /* ItemStoreDelegate.swift in Sources */,
+				9367F3891F48896B00985E97 /* CardView.swift in Sources */,
+				937DE7AB1F6806D700AFED6C /* UIImageViewExtension.swift in Sources */,
 				9367F3741F43621C00985E97 /* CustomerItemsChoosingViewController.swift in Sources */,
+				937DE7B31F688BEC00AFED6C /* Jsonable.swift in Sources */,
 				93B069101F2B6695001C995A /* DataManager.swift in Sources */,
 				93ADFBA31F31DB1F00692060 /* SellerUser.swift in Sources */,
 				93ADFBB01F31FCF700692060 /* DataSource.swift in Sources */,
 				932120A01F322BF800E8BE50 /* SellerProfileViewController.swift in Sources */,
 				932120A61F34C46F00E8BE50 /* CreateSellerViewController.swift in Sources */,
 				93B068F61F289347001C995A /* AppDelegate.swift in Sources */,
+				9367F3821F4865D300985E97 /* CustomOverlayView.swift in Sources */,
 				9367F36E1F3F6D3F00985E97 /* SellerItemCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,12 +10,12 @@ import Foundation
 
 class SellerUser: User {
     
-    var items: ItemStore = ItemStore()
+    var shops: CustomStorage = CustomStorage<Shop>()
     
     override init(params: [String: Any], json: [String : Any]) {
         
-        if let items = json["goods"] as? [String: Any] {
-            self.items = ItemStore(json: items)
+        if let shops = json["shops"] as? [String: Any] {
+            self.shops = CustomStorage(json: shops)
         }
         
         super.init(params: params, json: json)

@@ -11,16 +11,16 @@ import UIKit
 
 class LogInViewContoller: UIViewController, UITextFieldDelegate {
     
+    @IBOutlet weak var loadingImageView: UIImageView!
+    
     @IBOutlet weak var mailTextField: UITextField!
     
     @IBOutlet weak var passwordTextField: UITextField!
     
-    @IBOutlet weak var mailTextView: UITextView!
-    
-    @IBOutlet weak var passwordTextView: UITextView!
-    
     @IBOutlet weak var logInButton: UIButton!
     
+    @IBOutlet weak var topImageConstraint: NSLayoutConstraint!
+    @IBOutlet weak var bottomImageConstraint: NSLayoutConstraint!
     @IBOutlet var keyboardHeightLayoutConstraint: NSLayoutConstraint?
     
     @IBOutlet weak var imageSizeLayoutConstraint: NSLayoutConstraint!
@@ -35,12 +35,16 @@ class LogInViewContoller: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         
         if UIDevice.current.screenType == .iPhone5_5c_5s {
-            imageSizeLayoutConstraint.constant = 0
+            topImageConstraint.constant = 40
         }
         
         if UIDevice.current.screenType == .iPhoneP {
-            imageSizeLayoutConstraint.constant = 80
+            topImageConstraint.constant = 60
         }
+        
+        let loadingImages = (1...51).map { UIImage(named: "LogInLoadImg-\($0)")! }
+        loadingImageView.animationImages = loadingImages
+        loadingImageView.animationDuration = 1.0
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -55,14 +59,17 @@ class LogInViewContoller: UIViewController, UITextFieldDelegate {
     
     @IBAction func logIn(_ sender: Any) {
         
+        loadingImageView.startAnimating()
+        
         DataSource.loadUser(email: mailTextField.text!, password: passwordTextField.text!) { success, error in
             
+            self.loadingImageView.stopAnimating()
+            
             if success {
-                print(success)
                 
                 var storyboardName: String = "CustomerInterface"
                 
-                if let _ = DataSource.user as? SellerUser {
+                if DataSource.user is SellerUser {
                     storyboardName = "SellerInterface"
                 }
                 
@@ -70,18 +77,15 @@ class LogInViewContoller: UIViewController, UITextFieldDelegate {
                 let vc = storyboard.instantiateViewController(withIdentifier: "entryVC")
                 self.navigationController?.pushViewController(vc, animated: true)
                 
-            } else {
-                if let errorInfo = error?.getInfo() {
-                    switch errorInfo.0 {
-                        
-                    case .Email:
-                        self.mailTextView.text = errorInfo.1
-                        
-                    case .Password:
-                        self.passwordTextView.text = errorInfo.1
-                        
-                    }
-                }
+            }
+            
+            if let errorInfo = error?.getInfo() {
+                
+                let alert = UIAlertController(title: "Title", message: errorInfo.1, preferredStyle: UIAlertControllerStyle.alert)
+                
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+                
+                self.present(alert, animated: true, completion: nil)
             }
         }
     }
@@ -94,11 +98,14 @@ class LogInViewContoller: UIViewController, UITextFieldDelegate {
             let animationCurveRawNSN = userInfo[UIKeyboardAnimationCurveUserInfoKey] as? NSNumber
             let animationCurveRaw = animationCurveRawNSN?.uintValue ?? UIViewAnimationOptions.curveEaseInOut.rawValue
             let animationCurve:UIViewAnimationOptions = UIViewAnimationOptions(rawValue: animationCurveRaw)
-            if (endFrame?.origin.y)! >= UIScreen.main.bounds.size.height {
+            if endFrame!.origin.y >= UIScreen.main.bounds.size.height {
                 self.keyboardHeightLayoutConstraint?.constant = 70.0
+                self.bottomImageConstraint?.constant = 50
             } else {
                 self.keyboardHeightLayoutConstraint?.constant = endFrame?.size.height ?? 70.0
+                self.bottomImageConstraint?.constant = 0
             }
+            
             UIView.animate(withDuration: duration,
                            delay: TimeInterval(0),
                            options: animationCurve,
@@ -118,8 +125,6 @@ class LogInViewContoller: UIViewController, UITextFieldDelegate {
         }
         
         flags[textField.tag] = flag
-        
-        print("Change to \(flags[textField.tag])")
         
         return true
     }

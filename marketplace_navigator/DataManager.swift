@@ -14,7 +14,6 @@ class DataManager {
     private class func request(url:String, method: HTTPMethod, parameters: Parameters?, completion: @escaping (Dictionary<String,Any>) -> Void){
         
         let urlAll = "http://127.0.0.1:5000/" + url
-        print("request: " + urlAll)
         
         Alamofire.request(urlAll, method: method, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
             //debugPrint(response)
@@ -64,8 +63,8 @@ class DataManager {
         }
     }
     
-    class func addItem(idToken: String, name: String, gender: ItemGender, category: ItemCategory, price: String, completion: @escaping (CustomResponse) -> Void) {
-        DataManager.request(url: "additem", method: .post, parameters: ["idToken": idToken, "name": name, "gender": gender.rawValue, "category": category.rawValue , "price": price]) {
+    class func addItem(idToken: String, shopId: String, itemId: String, name: String, gender: ItemGender, category: ItemCategory, price: String, completion: @escaping (CustomResponse) -> Void) {
+        DataManager.request(url: "additem", method: .post, parameters: ["idToken": idToken, "shopId": shopId, "itemId": itemId, "name": name, "gender": gender.rawValue, "category": category.rawValue , "price": price]) {
             json in
             
             let response = CustomResponse.create(params: [:], json: json)
@@ -85,6 +84,14 @@ class DataManager {
     
     class func getItems(idToken: String, latitude: String, longitude: String, country: String, completion: @escaping (CustomResponse) -> Void) {
         DataManager.request(url: "getitems", method: .post, parameters: ["idToken": idToken, "latitude": latitude, "longitude": longitude, "country": country]) { json in
+            
+            let response = CustomResponse.create(params: [:], json: json)
+            completion(response)
+        }
+    }
+    
+    class func likeItem(idToken: String, host: String, shop: String, item: String, completion: @escaping (CustomResponse) -> Void) {
+        DataManager.request(url: "likeitem", method: .post, parameters: ["idToken": idToken, "hostId": host, "shopId": shop, "itemId": item]) { json in
             
             let response = CustomResponse.create(params: [:], json: json)
             completion(response)

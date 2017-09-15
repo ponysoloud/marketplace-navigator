@@ -8,7 +8,9 @@
 
 import Foundation
 
-class Item: GoodResponse {
+class Item: GoodResponse, Jsonable, Comparable {
+    
+    var id: String = ""
     var name: String = ""
     var image: String = ""
     var gender: ItemGender = .Unisex
@@ -23,8 +25,7 @@ class Item: GoodResponse {
         self.price = price
     }
     
-    init(json: [String: Any]) {
-        
+    required init(json: [String: Any]) {
         
         if let name = json["name"] as? String {
             self.name = name

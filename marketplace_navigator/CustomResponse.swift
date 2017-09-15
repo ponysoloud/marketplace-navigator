@@ -8,16 +8,19 @@
 
 import Foundation
 
-
 enum BadResponseTarget: Int {
     
     case Email
     
     case Password
     
+    case Country
+    
+    case None
+    
 }
 
-class CustomResponse {
+class CustomResponse: NSObject{
     
     class func create(params: [String: Any], json: [String : Any]) -> CustomResponse {
         
@@ -34,6 +37,12 @@ class BadResponse: CustomResponse {
     
     private var message: String = ""
     private var code: String = ""
+    private var target: BadResponseTarget = .None
+    
+    init(target: BadResponseTarget, message: String) {
+        self.target = target
+        self.message = message
+    }
     
     init(json: [String : Any]) {
         
@@ -47,22 +56,24 @@ class BadResponse: CustomResponse {
         
             if let message = error["message"] as? String {
                 self.message = message
+                
+                if self.message.contains("EMAIL") {
+                    target = .Email
+                    self.message = "Sorry, we can't find an account with this email address."
+                }
+                
+                if self.message.contains("PASSWORD") {
+                    target = .Password
+                    self.message = "Entered password is invalid"
+                }
+                
             }
         }
     }
     
     func getInfo() -> (BadResponseTarget, String) {
         
-        if message.contains("EMAIL") {
-            return (.Email, message)
-        }
-        
-        if message.contains("PASSWORD") {
-            return (.Password, message)
-        }
-        
-        //ЗАГЛУШКА
-        fatalError("Заглушка")
+        return(target, message)
     }
     
 }

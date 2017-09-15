@@ -50,13 +50,14 @@ class SellerAddGoodViewController: UIViewController, UITextFieldDelegate {
         let tempRaw1 = categoryTextField.text!.lowercased()
         let category = ItemCategory(rawValue: tempRaw1)
         
-        
+        /*
         DataSource.addItem(idToken: DataSource.user!.idToken, name: nameTextField.text!, gender: gender!, category: category!, price: priceTextField.text!) { success in
             
             if success {
                 self.dismissCurrentVC(sender)
             }
         }
+ */
     }
     
     

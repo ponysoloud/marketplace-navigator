@@ -56,15 +56,12 @@ class DataSource {
     static func removeUser() {
         user = nil
         UserDefaults.standard.removeObject(forKey: "CurrentUser")
+        UserDefaults.standard.removeObject(forKey: "CurrentUserProfileImage")
         UserDefaults.standard.synchronize()
     }
     
     static func checkUserInMemory() -> Bool {
-        if let _ = UserDefaults.standard.value(forKey: "CurrentUser") as?  [String:Any] {
-            return true
-        } else {
-            return false
-        }
+        return UserDefaults.standard.value(forKey: "CurrentUser") is  [String:Any]
     }
     
     /*
@@ -134,12 +131,12 @@ class DataSource {
         }
     }
     
-    static func addItem(idToken: String, name: String, gender: ItemGender, category: ItemCategory, price: String, completion: @escaping (Bool) -> Void) {
+    static func addItem(idToken: String, shopId: String, itemId: String, name: String, gender: ItemGender, category: ItemCategory, price: String, completion: @escaping (Bool) -> Void) {
         
-        DataManager.addItem(idToken: idToken, name: name, gender: gender, category: category, price: price) { response in
+        DataManager.addItem(idToken: idToken, shopId: shopId, itemId: itemId, name: name, gender: gender, category: category, price: price) { response in
             
             if let item = response as? Item {
-                (user as! SellerUser).items.add(item: item)
+                (user as! SellerUser).shops.get(with: shopId)!.items.add(item: item)
                 completion(true)
                 return
             }
@@ -157,7 +154,7 @@ class DataSource {
         DataManager.setLocation(idToken: idToken, latitude: la, longitude: lo, country: country) { response in
             
             if let loc = response as? Location {
-                user?.location = loc
+                (user as? CustomerUser)?.location = loc
                 completion(true)
                 return
             }
@@ -174,13 +171,65 @@ class DataSource {
         DataManager.getItems(idToken: idToken, latitude: la, longitude: lo, country: country) { response in
             
             if let items = response as? ItemCardStore {
-                itemCards = items
+                if itemCards == nil {
+                    itemCards = items
+                } else {
+                    itemCards?.append(store: items)
+                }
                 completion(true)
                 return
             }
             
             completion(false)
         }
+    }
+    
+    class func getItems(idToken: String, location: CLLocation, completion: @escaping (Bool, BadResponse?) -> Void) {
+        
+        Location.getCountry(location: location) { code, error in
+            if (code == nil) {
+                let bad = BadResponse(target: .Country, message: error!.localizedDescription)
+                completion(false, bad)
+                
+                return
+            }
+            
+            let la = location.coordinate.latitude
+            let lo = location.coordinate.longitude
+            
+            self.setLocation(idToken: idToken, latitude: la, longitude: lo, country: code!) { success in
+                
+                if success {
+                    self.getItems(idToken: idToken, latitude: la, longitude: lo, country: code!) { success in
+                        
+                        if success {
+                            completion(true, nil)
+                        }
+                        
+                        completion(false, nil)
+                        return
+                    }
+                }
+                
+                completion(false, nil)
+                return
+            }
+        }
+
+    }
+    
+    class func likeItem(idToken: String, host: String, shop: String, item: String, completion: @escaping (Bool) -> Void) {
+        
+        DataManager.likeItem(idToken: idToken, host: host, shop: shop, item: item) { response in
+            
+            if let _ = response as? GoodResponse {
+                completion(true)
+                return
+            }
+            
+            completion(false)
+        }
+        
     }
     
     private static func authUserHandler(response: CustomResponse) -> (Bool, BadResponse?) {
