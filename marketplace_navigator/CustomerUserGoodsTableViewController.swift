@@ -11,6 +11,8 @@ import UIKit
 
 class CustomerUserGoodsTableViewController: UITableViewController, CustomStorageDelegate {
     
+    @IBOutlet var emptyTableNotifyView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,7 +28,11 @@ class CustomerUserGoodsTableViewController: UITableViewController, CustomStorage
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (DataSource.user as! CustomerUser).likedItems.count
+        let count = (DataSource.user as! CustomerUser).likedItems.count
+        if count == 0 { tableView.backgroundView = emptyTableNotifyView }
+        else { tableView.backgroundView = nil }
+        
+        return count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

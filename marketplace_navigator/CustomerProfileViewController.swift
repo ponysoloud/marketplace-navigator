@@ -13,9 +13,9 @@ class CustomerProfileViewController: UIViewController, UIImagePickerControllerDe
     
     @IBOutlet weak var profileNameLabel: UILabel!
     
-    @IBOutlet weak var genderLabel: UILabel!
-    
     @IBOutlet weak var profileImageView: UIImageView!
+    
+    @IBOutlet weak var categoryTextField: UITextField!
     
     let imagePicker = UIImagePickerController()
     
@@ -37,8 +37,6 @@ class CustomerProfileViewController: UIViewController, UIImagePickerControllerDe
         if let profImage = DataSource.user?.profileImage {
             profileImageView.image = profImage
         }
-        genderLabel.text = (DataSource.user as! CustomerUser).gender.rawValue
-        genderLabel.text?.capitalizeFirstLetter()
         profileNameLabel.text = DataSource.user?.name
     }
     
@@ -59,5 +57,29 @@ class CustomerProfileViewController: UIViewController, UIImagePickerControllerDe
         dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func paramTextField(_ sender: UITextField) {
+        showChoiceMenu(title: "Choose category", items: ["All", "Shoes", "Underwear", "Denim", "Jackets", "Shirts", "Trousers"], todo: { item in
+            sender.text = item
+            DataSource.categoryToSearch = SearchItemCategory(rawValue: item.lowercased())!
+        })
+    }
+    
+    @discardableResult func showChoiceMenu(title: String, items: [String], todo: @escaping (String) -> Void) -> UIAlertController {
+        
+        let menu = UIAlertController(title: nil, message: title, preferredStyle: .actionSheet)
+        
+        for i in items {
+            let action = UIAlertAction(title: i, style: .default, handler: { _ in todo(i) })
+            menu.addAction(action)
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) {
+            (result : UIAlertAction) -> Void in
+        }
+        menu.addAction(cancelAction)
+        
+        self.present(menu, animated: true, completion: nil)
+        return menu
+    }
     
 }

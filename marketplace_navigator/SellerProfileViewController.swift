@@ -50,7 +50,7 @@ class SellerProfileViewController: UIViewController, CLLocationManagerDelegate {
                 return
             }
             
-            DataSource.setLocation(idToken: DataSource.user!.idToken, latitude: loc.coordinate.latitude, longitude: loc.coordinate.longitude, country: code!) { success in
+            DataSource.setLocation(idToken: DataSource.user!.idToken, latitude: loc.coordinate.latitude, longitude: loc.coordinate.longitude) { success in
                 
                 //...
                 print((DataSource.user as? CustomerUser)?.location?.location)

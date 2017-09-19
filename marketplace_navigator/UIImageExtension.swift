@@ -6,4 +6,12 @@
 //  Copyright © 2017 Base team. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+extension UIImage {
+    var isDark: Bool {
+        get {
+            return self.cgImage?.isDark ?? false
+        }
+    }
+}

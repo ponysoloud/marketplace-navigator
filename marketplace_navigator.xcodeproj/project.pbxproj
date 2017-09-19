@@ -11,7 +11,10 @@
 		932120A21F34B5FE00E8BE50 /* Authorization.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 932120A11F34B5FE00E8BE50 /* Authorization.storyboard */; };
 		932120A61F34C46F00E8BE50 /* CreateSellerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932120A51F34C46F00E8BE50 /* CreateSellerViewController.swift */; };
 		932120A81F34C48B00E8BE50 /* CreateCustomerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932120A71F34C48B00E8BE50 /* CreateCustomerViewController.swift */; };
-		93625AA61F6B378500FB3323 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93625AA51F6B378500FB3323 /* StringExtension.swift */; };
+		93625AA91F6F1AFB00FB3323 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93625AA81F6F1AFB00FB3323 /* UIImageExtension.swift */; };
+		93625AAB1F6F1B0600FB3323 /* CGImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93625AAA1F6F1B0600FB3323 /* CGImageExtension.swift */; };
+		93625AAF1F704F6D00FB3323 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93625AAE1F704F6D00FB3323 /* Assets.xcassets */; };
+		93625AB31F70641E00FB3323 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93625AB21F70641E00FB3323 /* UIViewExtension.swift */; };
 		9367F36E1F3F6D3F00985E97 /* SellerItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9367F36D1F3F6D3F00985E97 /* SellerItemCell.swift */; };
 		9367F3711F4356CB00985E97 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9367F3701F4356CB00985E97 /* Location.swift */; };
 		9367F3741F43621C00985E97 /* CustomerItemsChoosingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9367F3731F43621C00985E97 /* CustomerItemsChoosingViewController.swift */; };
@@ -38,7 +41,6 @@
 		93ADFBB01F31FCF700692060 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93ADFBAF1F31FCF700692060 /* DataSource.swift */; };
 		93ADFBB21F31FF4F00692060 /* LogInViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93ADFBB11F31FF4F00692060 /* LogInViewContoller.swift */; };
 		93B068F61F289347001C995A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B068F51F289347001C995A /* AppDelegate.swift */; };
-		93B068FD1F289347001C995A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93B068FC1F289347001C995A /* Assets.xcassets */; };
 		93B069001F289347001C995A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93B068FE1F289347001C995A /* LaunchScreen.storyboard */; };
 		93B0690A1F28952A001C995A /* SellerInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93B069091F28952A001C995A /* SellerInterface.storyboard */; };
 		93B0690C1F28953C001C995A /* CustomerInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93B0690B1F28953C001C995A /* CustomerInterface.storyboard */; };
@@ -56,7 +58,10 @@
 		932120A11F34B5FE00E8BE50 /* Authorization.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Authorization.storyboard; sourceTree = "<group>"; };
 		932120A51F34C46F00E8BE50 /* CreateSellerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateSellerViewController.swift; sourceTree = "<group>"; };
 		932120A71F34C48B00E8BE50 /* CreateCustomerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateCustomerViewController.swift; sourceTree = "<group>"; };
-		93625AA51F6B378500FB3323 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		93625AA81F6F1AFB00FB3323 /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
+		93625AAA1F6F1B0600FB3323 /* CGImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGImageExtension.swift; sourceTree = "<group>"; };
+		93625AAE1F704F6D00FB3323 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		93625AB21F70641E00FB3323 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		9367F36D1F3F6D3F00985E97 /* SellerItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SellerItemCell.swift; sourceTree = "<group>"; };
 		9367F3701F4356CB00985E97 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		9367F3731F43621C00985E97 /* CustomerItemsChoosingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerItemsChoosingViewController.swift; sourceTree = "<group>"; };
@@ -84,7 +89,6 @@
 		93ADFBB11F31FF4F00692060 /* LogInViewContoller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewContoller.swift; sourceTree = "<group>"; };
 		93B068F21F289347001C995A /* marketplace_navigator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = marketplace_navigator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93B068F51F289347001C995A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		93B068FC1F289347001C995A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		93B068FF1F289347001C995A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		93B069011F289347001C995A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93B069091F28952A001C995A /* SellerInterface.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SellerInterface.storyboard; sourceTree = "<group>"; };
@@ -199,7 +203,9 @@
 				93B068F51F289347001C995A /* AppDelegate.swift */,
 				9367F3751F44BB8300985E97 /* UIDeviceExtension.swift */,
 				937DE7AA1F6806D700AFED6C /* UIImageViewExtension.swift */,
-				93625AA51F6B378500FB3323 /* StringExtension.swift */,
+				93625AA81F6F1AFB00FB3323 /* UIImageExtension.swift */,
+				93625AAA1F6F1B0600FB3323 /* CGImageExtension.swift */,
+				93625AB21F70641E00FB3323 /* UIViewExtension.swift */,
 				9367F36F1F40D89200985E97 /* Data Manager */,
 				93ADFBAC1F31EC2D00692060 /* Model */,
 				93CA25E51F3B575500D4B0B8 /* Controller */,
@@ -210,7 +216,7 @@
 				93B068FE1F289347001C995A /* LaunchScreen.storyboard */,
 				9367F37F1F48657E00985E97 /* OverlayView.xib */,
 				9367F3861F4880B100985E97 /* CardView.xib */,
-				93B068FC1F289347001C995A /* Assets.xcassets */,
+				93625AAE1F704F6D00FB3323 /* Assets.xcassets */,
 				93B069011F289347001C995A /* Info.plist */,
 			);
 			path = marketplace_navigator;
@@ -313,8 +319,8 @@
 				9367F3801F48657E00985E97 /* OverlayView.xib in Resources */,
 				93B0690A1F28952A001C995A /* SellerInterface.storyboard in Resources */,
 				9367F3871F4880B100985E97 /* CardView.xib in Resources */,
+				93625AAF1F704F6D00FB3323 /* Assets.xcassets in Resources */,
 				93B069001F289347001C995A /* LaunchScreen.storyboard in Resources */,
-				93B068FD1F289347001C995A /* Assets.xcassets in Resources */,
 				93B0690C1F28953C001C995A /* CustomerInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -378,13 +384,14 @@
 				937DE7B51F688C1500AFED6C /* Comparable.swift in Sources */,
 				937DE7AF1F68837B00AFED6C /* CustomStorageDelegate.swift in Sources */,
 				93CA25E21F3B2D9400D4B0B8 /* SellerAddGoodViewController.swift in Sources */,
-				93625AA61F6B378500FB3323 /* StringExtension.swift in Sources */,
 				932120A81F34C48B00E8BE50 /* CreateCustomerViewController.swift in Sources */,
+				93625AB31F70641E00FB3323 /* UIViewExtension.swift in Sources */,
 				93CA25E41F3B30FA00D4B0B8 /* SellerGoodsTableViewController.swift in Sources */,
 				93CA25EC1F3B63D700D4B0B8 /* Item.swift in Sources */,
 				9367F3711F4356CB00985E97 /* Location.swift in Sources */,
 				937DE7A91F61BC7000AFED6C /* CustomerProfileViewController.swift in Sources */,
 				9367F38D1F509FA500985E97 /* CustomerItemCell.swift in Sources */,
+				93625AAB1F6F1B0600FB3323 /* CGImageExtension.swift in Sources */,
 				9367F3761F44BB8300985E97 /* UIDeviceExtension.swift in Sources */,
 				93ADFBB21F31FF4F00692060 /* LogInViewContoller.swift in Sources */,
 				937DE7A71F609F0900AFED6C /* Shop.swift in Sources */,
@@ -400,6 +407,7 @@
 				937DE7B31F688BEC00AFED6C /* Jsonable.swift in Sources */,
 				93B069101F2B6695001C995A /* DataManager.swift in Sources */,
 				93ADFBA31F31DB1F00692060 /* SellerUser.swift in Sources */,
+				93625AA91F6F1AFB00FB3323 /* UIImageExtension.swift in Sources */,
 				93ADFBB01F31FCF700692060 /* DataSource.swift in Sources */,
 				932120A01F322BF800E8BE50 /* SellerProfileViewController.swift in Sources */,
 				932120A61F34C46F00E8BE50 /* CreateSellerViewController.swift in Sources */,

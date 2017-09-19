@@ -109,7 +109,9 @@ class GoodResponse: CustomResponse {
         
         if rType == "searching" {
             if let info = json["info"] as? [String: Any] {
-                return ItemCardStore(json: info)
+                let cardStore = ItemCardStore(json: info)
+                    cardStore.transfer()
+                return cardStore
             }
         }
         

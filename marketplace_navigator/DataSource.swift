@@ -17,6 +17,15 @@ enum Gender: String {
     
 }
 
+enum ItemGender: String {
+    
+    case Male = "male"
+    
+    case Female = "female"
+    
+    case Unisex = "unisex"
+}
+
 enum UserType: String {
     
     case Seller = "seller"
@@ -31,15 +40,30 @@ enum ItemCategory: String {
     
     case Shoes = "shoes"
     
+    case Denim = "denim"
+    
+    case Jackets = "jackets"
+    
+    case Shirts = "shirts"
+    
+    case Trousers = "trousers"
 }
 
-enum ItemGender: String {
+enum SearchItemCategory: String {
     
-    case Male = "male"
+    case All = "all"
     
-    case Female = "female"
+    case Underwear = "underwear"
     
-    case Unisex = "unisex"
+    case Shoes = "shoes"
+    
+    case Denim = "denim"
+    
+    case Jackets = "jackets"
+    
+    case Shirts = "shirts"
+    
+    case Trousers = "trousers"
 }
 
 class DataSource {
@@ -47,6 +71,8 @@ class DataSource {
     public static var user: User?
     
     public static var itemCards: ItemCardStore?
+    
+    public static var categoryToSearch: SearchItemCategory = .All
     
     static func saveUser() {
         UserDefaults.standard.set(user?.toDictionary(), forKey: "CurrentUser")
@@ -146,12 +172,12 @@ class DataSource {
         
     }
     
-    static func setLocation(idToken: String, latitude: CLLocationDegrees, longitude: CLLocationDegrees, country: String, completion: @escaping (Bool) -> Void) {
+    static func setLocation(idToken: String, latitude: CLLocationDegrees, longitude: CLLocationDegrees, completion: @escaping (Bool) -> Void) {
         
         let la = "\(latitude)"
         let lo = "\(longitude)"
         
-        DataManager.setLocation(idToken: idToken, latitude: la, longitude: lo, country: country) { response in
+        DataManager.setLocation(idToken: idToken, latitude: la, longitude: lo) { response in
             
             if let loc = response as? Location {
                 (user as? CustomerUser)?.location = loc
@@ -163,6 +189,46 @@ class DataSource {
         }
     }
     
+    class func getItems(idToken: String, latitude: CLLocationDegrees, longitude: CLLocationDegrees, completion: @escaping (Bool) -> Void) {
+        
+        let la = "\(latitude)"
+        let lo = "\(longitude)"
+        
+        DataManager.getItems(idToken: idToken, latitude: la, longitude: lo, category: categoryToSearch) { response in
+            
+            if let items = response as? ItemCardStore {
+                if itemCards == nil {
+                    itemCards = items
+                } else {
+                    itemCards?.append(store: items)
+                }
+                completion(true)
+                return
+            }
+            
+            completion(false)
+        }
+    }
+    
+    class func getItems(idToken: String, location: CLLocation, completion: @escaping (Bool) -> Void) {
+        
+        let la = location.coordinate.latitude
+        let lo = location.coordinate.longitude
+        
+        self.setLocation(idToken: idToken, latitude: la, longitude: lo) {
+            
+            if $0 {
+                self.getItems(idToken: idToken, latitude: la, longitude: lo) {
+                    completion($0)
+                }
+            } else {
+                completion(false)
+            }
+        }
+        
+    }
+    
+    /*
     class func getItems(idToken: String, latitude: CLLocationDegrees, longitude: CLLocationDegrees, country: String, completion: @escaping (Bool) -> Void) {
         
         let la = "\(latitude)"
@@ -217,6 +283,7 @@ class DataSource {
         }
 
     }
+    */
     
     class func likeItem(idToken: String, host: String, shop: String, item: String, completion: @escaping (Bool) -> Void) {
         

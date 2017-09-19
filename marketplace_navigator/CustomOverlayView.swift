@@ -7,20 +7,11 @@
 //
 
 import Foundation
-
-//
-//  ExampleOverlayView.swift
-//  KolodaView
-//
-//  Created by Eugene Andreyev on 6/21/15.
-//  Copyright (c) 2015 CocoaPods. All rights reserved.
-//
-
 import UIKit
 import Koloda
 
-private let overlayRightImageName = "yesOverlayImage"
-private let overlayLeftImageName = "noOverlayImage"
+private let overlayRightImageName = "LikeOverlay"
+private let overlayLeftImageName = "DislikeOverlay"
 
 class CustomOverlayView: OverlayView {
     
@@ -28,6 +19,7 @@ class CustomOverlayView: OverlayView {
         [unowned self] in
         
         var imageView = UIImageView(frame: self.bounds)
+        
         self.addSubview(imageView)
         
         return imageView
@@ -45,5 +37,23 @@ class CustomOverlayView: OverlayView {
             }
         }
     }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        overlayImageView.cornerRadius = 10.0
+    }
+    
+    /*
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        overlayImageView.cornerRadius = 10.0
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        overlayImageView.cornerRadius = 10.0
+    }
+ */
     
 }

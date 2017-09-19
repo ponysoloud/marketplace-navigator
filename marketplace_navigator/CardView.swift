@@ -34,7 +34,6 @@ class CardView: UIView {
     
     @IBOutlet weak var itemImage: UIImageView!
     
-    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         fromNib()
@@ -42,8 +41,8 @@ class CardView: UIView {
     
     init(card: ItemCard) {
         super.init(frame: CGRect())
-        layer.cornerRadius = 10;
-        layer.masksToBounds = true;
+        layer.cornerRadius = 10
+        layer.masksToBounds = true
         fromNib()
         itemImage.downloadedFrom(link: card.item.image)
         itemName.text = card.item.name

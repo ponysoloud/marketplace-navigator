@@ -55,33 +55,9 @@ class CreateCustomerViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func genderTextFieldTap(_ sender: Any) {
         
-        print("tap")
-        
-        let genderMenu = UIAlertController(title: nil, message: "Choose gender", preferredStyle: .actionSheet)
-        
-        let setGenderWithMale = UIAlertAction(title: "Male", style: .default) {
-            (result : UIAlertAction) -> Void in
-            
-            self.genderTextField.text = "Male"
-            
-        }
-        
-        let setGenderWithFemale = UIAlertAction(title: "Female", style: .default) {
-            (result : UIAlertAction) -> Void in
-            
-            self.genderTextField.text = "Female"
-            
-        }
-        
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) {
-            (result : UIAlertAction) -> Void in
-            
-        }
-        
-        genderMenu.addAction(setGenderWithMale)
-        genderMenu.addAction(setGenderWithFemale)
-        genderMenu.addAction(cancelAction)
-        self.present(genderMenu, animated: true, completion: nil)
+        showChoiceMenu(title: "Choose gender", items: ["Male", "Female"], todo: { item in
+            self.genderTextField.text = item
+        })
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -92,6 +68,24 @@ class CreateCustomerViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func dismissKeyboard(_ sender: AnyObject) {
         self.view.endEditing(true)
+    }
+    
+    @discardableResult func showChoiceMenu(title: String, items: [String], todo: @escaping (String) -> Void) -> UIAlertController {
+        
+        let menu = UIAlertController(title: nil, message: title, preferredStyle: .actionSheet)
+        
+        for i in items {
+            let action = UIAlertAction(title: i, style: .default, handler: { _ in todo(i) })
+            menu.addAction(action)
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) {
+            (result : UIAlertAction) -> Void in
+        }
+        menu.addAction(cancelAction)
+        
+        self.present(menu, animated: true, completion: nil)
+        return menu
     }
     
 }

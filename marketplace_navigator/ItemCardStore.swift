@@ -33,7 +33,7 @@ class ItemCardStore: GoodResponse {
                     card.id = i.key
                 
                 if !(DataSource.user! as! CustomerUser).likedItems.contains(item: card) {
-                    self.cards.append(card)
+                    self.buffer.append(card)
                 }
             }
         }
@@ -44,7 +44,7 @@ class ItemCardStore: GoodResponse {
             if let temp = i.value as? [String: Any] {
                 let card = ItemCard(json: temp)
                     card.id = i.key
-                if self.contains(item: card) {
+                if !self.contains(item: card) {
                     self.buffer.append(card)
                 }
             }
@@ -61,6 +61,7 @@ class ItemCardStore: GoodResponse {
         }
     }
     
+    @discardableResult
     func transfer() -> Int {
         let buffCount = buffer.count
         cards.append(contentsOf: buffer)
