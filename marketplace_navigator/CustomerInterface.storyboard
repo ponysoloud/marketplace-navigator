@@ -60,6 +60,19 @@
                                     <action selector="paramTextField:" destination="DKR-yu-ju7" eventType="touchDown" id="tNJ-Ru-cO7"/>
                                 </connections>
                             </textField>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9iy-gL-PLH">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem id="6Jc-81-MqN">
+                                        <barButtonItem key="leftBarButtonItem" image="Exit" id="Bf8-Bw-CAK">
+                                            <color key="tintColor" red="0.84999999999999998" green="0.84999999999999998" blue="0.84999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="exitUser:" destination="DKR-yu-ju7" id="JvA-ug-mdT"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -67,22 +80,26 @@
                             <constraint firstItem="RW6-Lk-fCB" firstAttribute="leading" secondItem="Jez-Ej-IHf" secondAttribute="leadingMargin" constant="100" id="AbL-yb-2AW"/>
                             <constraint firstItem="UE2-Ip-vlW" firstAttribute="top" secondItem="2V2-PY-UDZ" secondAttribute="bottom" constant="10" id="BFC-FY-T7D"/>
                             <constraint firstItem="RW6-Lk-fCB" firstAttribute="top" secondItem="E6e-dj-wLn" secondAttribute="bottom" constant="78" id="GRR-le-3Sw"/>
+                            <constraint firstItem="9iy-gL-PLH" firstAttribute="leading" secondItem="Jez-Ej-IHf" secondAttribute="leading" id="Hqs-OB-8Dh"/>
                             <constraint firstAttribute="trailing" secondItem="N8G-Ev-dsW" secondAttribute="trailing" id="IQi-dT-P8F"/>
                             <constraint firstAttribute="trailingMargin" secondItem="bVr-4g-7G4" secondAttribute="trailing" constant="20" id="Jj6-hP-jO7"/>
                             <constraint firstItem="N8G-Ev-dsW" firstAttribute="leading" secondItem="Jez-Ej-IHf" secondAttribute="leading" id="KzU-sv-KIX"/>
+                            <constraint firstItem="9iy-gL-PLH" firstAttribute="top" secondItem="E6e-dj-wLn" secondAttribute="bottom" id="ObI-VW-nTR"/>
                             <constraint firstItem="UE2-Ip-vlW" firstAttribute="centerX" secondItem="Jez-Ej-IHf" secondAttribute="centerX" id="Odt-0Q-Q3b"/>
                             <constraint firstItem="IoF-ah-9dq" firstAttribute="top" secondItem="UE2-Ip-vlW" secondAttribute="bottom" constant="84" id="R2A-yG-YsD"/>
                             <constraint firstItem="bVr-4g-7G4" firstAttribute="leading" secondItem="Jez-Ej-IHf" secondAttribute="leadingMargin" constant="20" id="XZE-EE-VYf"/>
                             <constraint firstItem="2V2-PY-UDZ" firstAttribute="centerX" secondItem="Jez-Ej-IHf" secondAttribute="centerX" id="eVg-Ai-efw"/>
                             <constraint firstItem="bVr-4g-7G4" firstAttribute="bottom" secondItem="N8G-Ev-dsW" secondAttribute="bottom" constant="-130" id="ezt-Sh-o3s"/>
+                            <constraint firstAttribute="trailing" secondItem="9iy-gL-PLH" secondAttribute="trailing" id="f3l-QH-k3W"/>
                             <constraint firstItem="IoF-ah-9dq" firstAttribute="top" secondItem="bVr-4g-7G4" secondAttribute="bottom" constant="313" id="fcv-hK-15Y"/>
                             <constraint firstItem="bVr-4g-7G4" firstAttribute="top" secondItem="RW6-Lk-fCB" secondAttribute="bottom" constant="10" id="qaj-2f-ayA"/>
                             <constraint firstItem="N8G-Ev-dsW" firstAttribute="top" secondItem="Jez-Ej-IHf" secondAttribute="top" id="txo-Eq-Ksn"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="User" id="qED-dt-whW"/>
+                    <tabBarItem key="tabBarItem" title="" image="User" id="bF8-v6-y2X"/>
                     <connections>
                         <outlet property="categoryTextField" destination="UE2-Ip-vlW" id="H5x-4Y-BdU"/>
+                        <outlet property="navigationBar" destination="9iy-gL-PLH" id="V8i-AB-pwE"/>
                         <outlet property="profileImageView" destination="RW6-Lk-fCB" id="Ic8-Nd-YCX"/>
                         <outlet property="profileNameLabel" destination="bVr-4g-7G4" id="THV-6a-gfQ"/>
                     </connections>
@@ -426,7 +443,7 @@
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="removeItem:" destination="bKf-YM-wuQ" eventType="touchUpInside" id="hBa-JM-yn0"/>
+                                                    <action selector="removeItem:" destination="bKf-YM-wuQ" eventType="touchUpInside" id="MgO-mj-VlB"/>
                                                 </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TrashIcon" translatesAutoresizingMaskIntoConstraints="NO" id="VQg-QQ-7b3">
@@ -529,6 +546,7 @@
     <resources>
         <image name="DislikeButton" width="28" height="28"/>
         <image name="DislikeButton-pressed" width="28" height="28"/>
+        <image name="Exit" width="23" height="20"/>
         <image name="LikeButton" width="28" height="28"/>
         <image name="LikeButton-pressed" width="28" height="28"/>
         <image name="List" width="19" height="17"/>

@@ -46,8 +46,6 @@ class CustomerUserGoodsTableViewController: UITableViewController, CustomStorage
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("tap1")
-        
         let item = (DataSource.user as! CustomerUser).likedItems[indexPath.row]
         selectedCellViewController?.setValues(with: item)
         selectedCellViewController?.itemIndexPathOnTableView = indexPath
@@ -64,7 +62,7 @@ class CustomerUserGoodsTableViewController: UITableViewController, CustomStorage
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print("tap2")
+        
         if segue.identifier == "Embed Segue" {
             let destinationVC = segue.destination as! CustomerDetailInfoViewController
             destinationVC.parentTableViewController = self

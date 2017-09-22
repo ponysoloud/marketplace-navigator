@@ -53,6 +53,7 @@
 		93EC1A231F7485FD00D6C7D7 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EC1A221F7485FD00D6C7D7 /* CustomTabBarController.swift */; };
 		93EC1A251F74864800D6C7D7 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EC1A241F74864800D6C7D7 /* CustomTabBar.swift */; };
 		93EC1A271F74866400D6C7D7 /* CustomTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EC1A261F74866400D6C7D7 /* CustomTabBarItem.swift */; };
+		93EC1A291F75512D00D6C7D7 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EC1A281F75512D00D6C7D7 /* UIViewControllerExtension.swift */; };
 		DA530D4C9C8585017D72EE69 /* Pods_marketplace_navigator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F3B769725F15EE3AE4E5190 /* Pods_marketplace_navigator.framework */; };
 /* End PBXBuildFile section */
 
@@ -107,6 +108,7 @@
 		93EC1A221F7485FD00D6C7D7 /* CustomTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		93EC1A241F74864800D6C7D7 /* CustomTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		93EC1A261F74866400D6C7D7 /* CustomTabBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarItem.swift; sourceTree = "<group>"; };
+		93EC1A281F75512D00D6C7D7 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		AD0DFAAAC12718ECD5854BA4 /* Pods-marketplace_navigator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-marketplace_navigator.release.xcconfig"; path = "Pods/Target Support Files/Pods-marketplace_navigator/Pods-marketplace_navigator.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -218,6 +220,7 @@
 				93625AAA1F6F1B0600FB3323 /* CGImageExtension.swift */,
 				93625AB21F70641E00FB3323 /* UIViewExtension.swift */,
 				93EC1A201F74288700D6C7D7 /* StringExtension.swift */,
+				93EC1A281F75512D00D6C7D7 /* UIViewControllerExtension.swift */,
 				9367F36F1F40D89200985E97 /* Data Manager */,
 				93ADFBAC1F31EC2D00692060 /* Model */,
 				93CA25E51F3B575500D4B0B8 /* Controller */,
@@ -407,6 +410,7 @@
 				93CA25EC1F3B63D700D4B0B8 /* Item.swift in Sources */,
 				9367F3711F4356CB00985E97 /* Location.swift in Sources */,
 				937DE7A91F61BC7000AFED6C /* CustomerProfileViewController.swift in Sources */,
+				93EC1A291F75512D00D6C7D7 /* UIViewControllerExtension.swift in Sources */,
 				9367F38D1F509FA500985E97 /* CustomerItemCell.swift in Sources */,
 				93EC1A271F74866400D6C7D7 /* CustomTabBarItem.swift in Sources */,
 				93625AAB1F6F1B0600FB3323 /* CGImageExtension.swift in Sources */,

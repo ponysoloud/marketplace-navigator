@@ -53,6 +53,7 @@ class CustomerDetailInfoViewController: UIViewController {
         navigationBar.isTranslucent = true
     }
     
+    
     func setValues(with card: ItemCard) {
         itemImageView.downloadedFrom(link: card.item.image)
         itemName.text = card.item.name
@@ -65,9 +66,15 @@ class CustomerDetailInfoViewController: UIViewController {
         itemId = card.id
     }
     
-    @IBAction func removeItem(_ sender: Any) {
+    @IBAction func removeItem(_ sender: UIButton) {
+        showHud("Loading")
+        sender.isUserInteractionEnabled = false
+        
         DataSource.dislikeItem(idToken: DataSource.user!.idToken, item: itemId!) {
             if $0 {
+                self.hideHUD()
+                sender.isUserInteractionEnabled = false
+                
                 self.parentTableViewController?.removeItem(at: self.itemIndexPathOnTableView!)
                 self.dismissCurrentVC(sender)
             }

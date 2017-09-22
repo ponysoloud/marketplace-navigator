@@ -11,6 +11,8 @@ import UIKit
 
 class CustomerProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    @IBOutlet weak var navigationBar: UINavigationBar!
+    
     @IBOutlet weak var profileNameLabel: UILabel!
     
     @IBOutlet weak var profileImageView: UIImageView!
@@ -29,19 +31,18 @@ class CustomerProfileViewController: UIViewController, UIImagePickerControllerDe
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationBar.shadowImage = UIImage()
+        navigationBar.isTranslucent = true
+        
         imagePicker.delegate = self
         
         self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width / 2
         self.profileImageView.clipsToBounds = true
+        if let profImage = DataSource.user?.profileImage { profileImageView.image = profImage }
         
-        if let profImage = DataSource.user?.profileImage {
-            profileImageView.image = profImage
-        }
         profileNameLabel.text = DataSource.user?.name
     }
-    
-    
-    // MARK: - UIImagePickerControllerDelegate Methods
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
@@ -56,6 +57,7 @@ class CustomerProfileViewController: UIViewController, UIImagePickerControllerDe
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
     }
+    
     
     @IBAction func paramTextField(_ sender: UITextField) {
         showChoiceMenu(title: "Choose category", items: ["All", "Shoes", "Underwear", "Denim", "Jackets", "Shirts", "Trousers"], todo: { item in
@@ -80,6 +82,14 @@ class CustomerProfileViewController: UIViewController, UIImagePickerControllerDe
         
         self.present(menu, animated: true, completion: nil)
         return menu
+    }
+    
+    @IBAction func exitUser(_ sender: UIBarButtonItem) {
+        DataSource.removeUser()
+        
+        let storyboard = UIStoryboard(name: "Authorization", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "entryVC")
+        self.present(vc, animated: true)
     }
     
 }
