@@ -32,7 +32,6 @@ class Location: GoodResponse {
     
     var location: CLLocation
     
-
     init(_ json: [String: Any]) {
         
         if  let lacoord = json["latitude"] as? String, let locoord = json["longitude"] as? String, let la = Double(lacoord), let lo = Double(locoord) {

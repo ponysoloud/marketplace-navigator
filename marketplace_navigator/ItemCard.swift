@@ -16,6 +16,7 @@ class ItemCard: Jsonable, Comparable {
         }
     }
     var shopId: String = ""
+    var shopName: String = ""
     var hostName: String = ""
     var hostKey: String = ""
     
@@ -39,6 +40,10 @@ class ItemCard: Jsonable, Comparable {
         
         if let shopId = json["shopId"] as? String {
             self.shopId = shopId
+        }
+        
+        if let shopName = json["shopName"] as? String {
+            self.shopName = shopName
         }
     }
     

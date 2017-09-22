@@ -34,9 +34,11 @@ class CustomerItemCell: UITableViewCell {
         self.item = card.item
         itemImageView.downloadedFrom(link: item.image)
         itemNameLabel.text = item.name
-        itemPriceLabel.text = item.price
+        itemPriceLabel.text = "\(item.price)$"
         brandNameLabel.text = card.hostName
     }
+    
+    
     
     
 }

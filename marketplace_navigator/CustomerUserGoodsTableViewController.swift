@@ -11,6 +11,8 @@ import UIKit
 
 class CustomerUserGoodsTableViewController: UITableViewController, CustomStorageDelegate {
     
+    var selectedCellViewController: CustomerDetailInfoViewController?
+    
     @IBOutlet var emptyTableNotifyView: UIView!
     
     override func viewDidLoad() {
@@ -21,7 +23,6 @@ class CustomerUserGoodsTableViewController: UITableViewController, CustomStorage
         let insets = UIEdgeInsetsMake(statusBarHeight, 0, 0, 0)
         tableView.contentInset = insets
         tableView.scrollIndicatorInsets = insets
-        
         tableView.tableFooterView = UIView(frame: .zero)
         
         (DataSource.user as! CustomerUser).likedItems.delegate = self
@@ -44,9 +45,31 @@ class CustomerUserGoodsTableViewController: UITableViewController, CustomStorage
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("tap1")
+        
+        let item = (DataSource.user as! CustomerUser).likedItems[indexPath.row]
+        selectedCellViewController?.setValues(with: item)
+        selectedCellViewController?.itemIndexPathOnTableView = indexPath
+    }
+    
+    func removeItem(at indexPath: IndexPath) {
+        (DataSource.user as! CustomerUser).likedItems.remove(at: indexPath.row)
+        tableView.deleteRows(at: [indexPath], with: .automatic)
+    }
+    
     func customStorage(didUpdatedIn index: Int) {
         let indexPath = IndexPath(row: index, section: 0)
         tableView.insertRows(at: [indexPath], with: .automatic)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print("tap2")
+        if segue.identifier == "Embed Segue" {
+            let destinationVC = segue.destination as! CustomerDetailInfoViewController
+            destinationVC.parentTableViewController = self
+            self.selectedCellViewController = destinationVC
+        }
     }
     
 }

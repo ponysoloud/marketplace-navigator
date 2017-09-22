@@ -299,6 +299,20 @@ class DataSource {
         
     }
     
+    class func dislikeItem(idToken: String, item: String, completion: @escaping (Bool) -> Void) {
+        
+        DataManager.dislikeItem(idToken: idToken, item: item) { response in
+            
+            if let _ = response as? GoodResponse {
+                completion(true)
+                return
+            }
+            
+            completion(false)
+        }
+        
+    }
+    
     private static func authUserHandler(response: CustomResponse) -> (Bool, BadResponse?) {
         
         if let user = response as? User {

@@ -98,5 +98,13 @@ class DataManager {
         }
     }
     
+    class func dislikeItem(idToken: String, item: String, completion: @escaping (CustomResponse) -> Void) {
+        DataManager.request(url: "dislikeitem", method: .post, parameters: ["idToken": idToken, "itemId": item]) { json in
+            
+            let response = CustomResponse.create(params: [:], json: json)
+            completion(response)
+        }
+    }
+    
     
 }

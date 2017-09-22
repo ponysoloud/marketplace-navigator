@@ -12,6 +12,8 @@ class Shop: GoodResponse, Jsonable, Comparable {
     
     var id: String = ""
     
+    var name: String = ""
+    
     var items: CustomStorage = CustomStorage<Item>()
     
     var location: Location?
@@ -24,6 +26,10 @@ class Shop: GoodResponse, Jsonable, Comparable {
         
         if let location = json["location"] as? [String: Any] {
             self.location = Location(location)
+        }
+        
+        if let name = json["name"] as? String {
+            self.name = name
         }
     }
     

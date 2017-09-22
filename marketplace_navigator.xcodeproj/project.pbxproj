@@ -48,6 +48,11 @@
 		93CA25E21F3B2D9400D4B0B8 /* SellerAddGoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CA25E11F3B2D9400D4B0B8 /* SellerAddGoodViewController.swift */; };
 		93CA25E41F3B30FA00D4B0B8 /* SellerGoodsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CA25E31F3B30FA00D4B0B8 /* SellerGoodsTableViewController.swift */; };
 		93CA25EC1F3B63D700D4B0B8 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CA25EB1F3B63D700D4B0B8 /* Item.swift */; };
+		93EC1A1F1F73296500D6C7D7 /* CustomerDetailInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EC1A1E1F73296500D6C7D7 /* CustomerDetailInfoViewController.swift */; };
+		93EC1A211F74288700D6C7D7 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EC1A201F74288700D6C7D7 /* StringExtension.swift */; };
+		93EC1A231F7485FD00D6C7D7 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EC1A221F7485FD00D6C7D7 /* CustomTabBarController.swift */; };
+		93EC1A251F74864800D6C7D7 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EC1A241F74864800D6C7D7 /* CustomTabBar.swift */; };
+		93EC1A271F74866400D6C7D7 /* CustomTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EC1A261F74866400D6C7D7 /* CustomTabBarItem.swift */; };
 		DA530D4C9C8585017D72EE69 /* Pods_marketplace_navigator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F3B769725F15EE3AE4E5190 /* Pods_marketplace_navigator.framework */; };
 /* End PBXBuildFile section */
 
@@ -97,6 +102,11 @@
 		93CA25E11F3B2D9400D4B0B8 /* SellerAddGoodViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SellerAddGoodViewController.swift; sourceTree = "<group>"; };
 		93CA25E31F3B30FA00D4B0B8 /* SellerGoodsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SellerGoodsTableViewController.swift; sourceTree = "<group>"; };
 		93CA25EB1F3B63D700D4B0B8 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		93EC1A1E1F73296500D6C7D7 /* CustomerDetailInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerDetailInfoViewController.swift; sourceTree = "<group>"; };
+		93EC1A201F74288700D6C7D7 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		93EC1A221F7485FD00D6C7D7 /* CustomTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
+		93EC1A241F74864800D6C7D7 /* CustomTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
+		93EC1A261F74866400D6C7D7 /* CustomTabBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarItem.swift; sourceTree = "<group>"; };
 		AD0DFAAAC12718ECD5854BA4 /* Pods-marketplace_navigator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-marketplace_navigator.release.xcconfig"; path = "Pods/Target Support Files/Pods-marketplace_navigator/Pods-marketplace_navigator.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -144,6 +154,7 @@
 				937DE7A81F61BC7000AFED6C /* CustomerProfileViewController.swift */,
 				9367F3731F43621C00985E97 /* CustomerItemsChoosingViewController.swift */,
 				9367F38E1F50A04800985E97 /* CustomerUserGoodsTableViewController.swift */,
+				93EC1A1E1F73296500D6C7D7 /* CustomerDetailInfoViewController.swift */,
 			);
 			name = Customer;
 			sourceTree = "<group>";
@@ -206,6 +217,7 @@
 				93625AA81F6F1AFB00FB3323 /* UIImageExtension.swift */,
 				93625AAA1F6F1B0600FB3323 /* CGImageExtension.swift */,
 				93625AB21F70641E00FB3323 /* UIViewExtension.swift */,
+				93EC1A201F74288700D6C7D7 /* StringExtension.swift */,
 				9367F36F1F40D89200985E97 /* Data Manager */,
 				93ADFBAC1F31EC2D00692060 /* Model */,
 				93CA25E51F3B575500D4B0B8 /* Controller */,
@@ -228,6 +240,9 @@
 				93625AA71F6B4A1700FB3323 /* Authorization */,
 				9367F3721F435FA200985E97 /* Customer */,
 				93CA25E61F3B576000D4B0B8 /* Seller */,
+				93EC1A221F7485FD00D6C7D7 /* CustomTabBarController.swift */,
+				93EC1A241F74864800D6C7D7 /* CustomTabBar.swift */,
+				93EC1A261F74866400D6C7D7 /* CustomTabBarItem.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -382,15 +397,18 @@
 			files = (
 				9367F37A1F45F8C500985E97 /* ItemCardStore.swift in Sources */,
 				937DE7B51F688C1500AFED6C /* Comparable.swift in Sources */,
+				93EC1A251F74864800D6C7D7 /* CustomTabBar.swift in Sources */,
 				937DE7AF1F68837B00AFED6C /* CustomStorageDelegate.swift in Sources */,
 				93CA25E21F3B2D9400D4B0B8 /* SellerAddGoodViewController.swift in Sources */,
 				932120A81F34C48B00E8BE50 /* CreateCustomerViewController.swift in Sources */,
 				93625AB31F70641E00FB3323 /* UIViewExtension.swift in Sources */,
 				93CA25E41F3B30FA00D4B0B8 /* SellerGoodsTableViewController.swift in Sources */,
+				93EC1A231F7485FD00D6C7D7 /* CustomTabBarController.swift in Sources */,
 				93CA25EC1F3B63D700D4B0B8 /* Item.swift in Sources */,
 				9367F3711F4356CB00985E97 /* Location.swift in Sources */,
 				937DE7A91F61BC7000AFED6C /* CustomerProfileViewController.swift in Sources */,
 				9367F38D1F509FA500985E97 /* CustomerItemCell.swift in Sources */,
+				93EC1A271F74866400D6C7D7 /* CustomTabBarItem.swift in Sources */,
 				93625AAB1F6F1B0600FB3323 /* CGImageExtension.swift in Sources */,
 				9367F3761F44BB8300985E97 /* UIDeviceExtension.swift in Sources */,
 				93ADFBB21F31FF4F00692060 /* LogInViewContoller.swift in Sources */,
@@ -406,11 +424,13 @@
 				9367F3741F43621C00985E97 /* CustomerItemsChoosingViewController.swift in Sources */,
 				937DE7B31F688BEC00AFED6C /* Jsonable.swift in Sources */,
 				93B069101F2B6695001C995A /* DataManager.swift in Sources */,
+				93EC1A1F1F73296500D6C7D7 /* CustomerDetailInfoViewController.swift in Sources */,
 				93ADFBA31F31DB1F00692060 /* SellerUser.swift in Sources */,
 				93625AA91F6F1AFB00FB3323 /* UIImageExtension.swift in Sources */,
 				93ADFBB01F31FCF700692060 /* DataSource.swift in Sources */,
 				932120A01F322BF800E8BE50 /* SellerProfileViewController.swift in Sources */,
 				932120A61F34C46F00E8BE50 /* CreateSellerViewController.swift in Sources */,
+				93EC1A211F74288700D6C7D7 /* StringExtension.swift in Sources */,
 				93B068F61F289347001C995A /* AppDelegate.swift in Sources */,
 				9367F3821F4865D300985E97 /* CustomOverlayView.swift in Sources */,
 				9367F36E1F3F6D3F00985E97 /* SellerItemCell.swift in Sources */,

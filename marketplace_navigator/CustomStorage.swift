@@ -48,6 +48,12 @@ class CustomStorage<T: Comparable> {
         
         return items[indx]
     }
+    
+    func remove(at index: Int) {
+        if index < count {
+            items.remove(at: index)
+        }
+    }
 }
 
 extension CustomStorage where T: Jsonable {

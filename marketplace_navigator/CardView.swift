@@ -46,7 +46,7 @@ class CardView: UIView {
         fromNib()
         itemImage.downloadedFrom(link: card.item.image)
         itemName.text = card.item.name
-        itemCost.text = card.item.price
+        itemCost.text = "\(card.item.price)$"
         brandName.text = card.hostName
     }
     
