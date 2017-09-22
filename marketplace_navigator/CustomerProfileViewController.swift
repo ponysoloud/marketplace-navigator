@@ -15,7 +15,7 @@ class CustomerProfileViewController: UIViewController, UIImagePickerControllerDe
     
     @IBOutlet weak var profileNameLabel: UILabel!
     
-    @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var profileImageView: RoundedImageView!
     
     @IBOutlet weak var categoryTextField: UITextField!
     
@@ -28,6 +28,10 @@ class CustomerProfileViewController: UIViewController, UIImagePickerControllerDe
         present(imagePicker, animated: true, completion: nil)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,8 +41,6 @@ class CustomerProfileViewController: UIViewController, UIImagePickerControllerDe
         
         imagePicker.delegate = self
         
-        self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width / 2
-        self.profileImageView.clipsToBounds = true
         if let profImage = DataSource.user?.profileImage { profileImageView.image = profImage }
         
         profileNameLabel.text = DataSource.user?.name

@@ -45,6 +45,7 @@
 		93B0690A1F28952A001C995A /* SellerInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93B069091F28952A001C995A /* SellerInterface.storyboard */; };
 		93B0690C1F28953C001C995A /* CustomerInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93B0690B1F28953C001C995A /* CustomerInterface.storyboard */; };
 		93B069101F2B6695001C995A /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B0690F1F2B6695001C995A /* DataManager.swift */; };
+		93BA11801F75C0A90001FD39 /* RoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BA117F1F75C0A90001FD39 /* RoundedImageView.swift */; };
 		93CA25E21F3B2D9400D4B0B8 /* SellerAddGoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CA25E11F3B2D9400D4B0B8 /* SellerAddGoodViewController.swift */; };
 		93CA25E41F3B30FA00D4B0B8 /* SellerGoodsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CA25E31F3B30FA00D4B0B8 /* SellerGoodsTableViewController.swift */; };
 		93CA25EC1F3B63D700D4B0B8 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CA25EB1F3B63D700D4B0B8 /* Item.swift */; };
@@ -100,6 +101,7 @@
 		93B069091F28952A001C995A /* SellerInterface.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SellerInterface.storyboard; sourceTree = "<group>"; };
 		93B0690B1F28953C001C995A /* CustomerInterface.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CustomerInterface.storyboard; sourceTree = "<group>"; };
 		93B0690F1F2B6695001C995A /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		93BA117F1F75C0A90001FD39 /* RoundedImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedImageView.swift; sourceTree = "<group>"; };
 		93CA25E11F3B2D9400D4B0B8 /* SellerAddGoodViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SellerAddGoodViewController.swift; sourceTree = "<group>"; };
 		93CA25E31F3B30FA00D4B0B8 /* SellerGoodsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SellerGoodsTableViewController.swift; sourceTree = "<group>"; };
 		93CA25EB1F3B63D700D4B0B8 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 				93B068F51F289347001C995A /* AppDelegate.swift */,
 				9367F3751F44BB8300985E97 /* UIDeviceExtension.swift */,
 				937DE7AA1F6806D700AFED6C /* UIImageViewExtension.swift */,
+				93BA117F1F75C0A90001FD39 /* RoundedImageView.swift */,
 				93625AA81F6F1AFB00FB3323 /* UIImageExtension.swift */,
 				93625AAA1F6F1B0600FB3323 /* CGImageExtension.swift */,
 				93625AB21F70641E00FB3323 /* UIViewExtension.swift */,
@@ -433,6 +436,7 @@
 				93625AA91F6F1AFB00FB3323 /* UIImageExtension.swift in Sources */,
 				93ADFBB01F31FCF700692060 /* DataSource.swift in Sources */,
 				932120A01F322BF800E8BE50 /* SellerProfileViewController.swift in Sources */,
+				93BA11801F75C0A90001FD39 /* RoundedImageView.swift in Sources */,
 				932120A61F34C46F00E8BE50 /* CreateSellerViewController.swift in Sources */,
 				93EC1A211F74288700D6C7D7 /* StringExtension.swift in Sources */,
 				93B068F61F289347001C995A /* AppDelegate.swift in Sources */,

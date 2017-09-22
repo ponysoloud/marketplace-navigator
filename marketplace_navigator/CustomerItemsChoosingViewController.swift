@@ -78,6 +78,8 @@ class CustomerItemsChoosingViewController: UIViewController, CLLocationManagerDe
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        print("update")
+        
         if status != .authorizedAlways && status != .authorizedWhenInUse {
             // Change UI
             errorTitleLabel.text = "Has no acception to your location. Please accept it in \"Settings\""
@@ -126,9 +128,11 @@ class CustomerItemsChoosingViewController: UIViewController, CLLocationManagerDe
         }
     }
     
+    
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print(error)
     }
+    
     
     @IBAction func leftButtonTapped() {
         kolodaView?.swipe(.left)

@@ -13,7 +13,7 @@ class DataManager {
     
     private class func request(url:String, method: HTTPMethod, parameters: Parameters?, completion: @escaping (Dictionary<String,Any>) -> Void){
         
-        let urlAll = "http://127.0.0.1:5000/" + url
+        let urlAll = "https://marketplace-navigator-server.herokuapp.com/" + url
         
         Alamofire.request(urlAll, method: method, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
             //debugPrint(response)
