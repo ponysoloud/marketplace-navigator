@@ -11,13 +11,13 @@ import MBProgressHUD
 
 extension UIViewController {
     
-    func showHud(_ message: String) {
-        let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
-        hud.label.text = message
-        hud.isUserInteractionEnabled = false
+    func showHud() {
+        LoadingHud.showAdded(to: self.view)
+        view.isUserInteractionEnabled = false
     }
     
     func hideHUD() {
-        MBProgressHUD.hide(for: self.view, animated: true)
+        LoadingHud.hide(at: self.view)
+        view.isUserInteractionEnabled = true
     }
 }

@@ -64,15 +64,33 @@ enum SearchItemCategory: String {
     case Shirts = "shirts"
     
     case Trousers = "trousers"
+    
+    static var count: Int { return SearchItemCategory.Trousers.hashValue + 1 }
 }
 
 class DataSource {
     
     public static var user: User?
     
-    public static var itemCards: ItemCardStore?
+    public static var itemCards: ItemCardStore? {
+        get {
+            return itemCardsArray[categoryToSearch.hashValue]
+        }
+        
+        set {
+            itemCardsArray[categoryToSearch.hashValue] = newValue
+        }
+    }
     
-    public static var categoryToSearch: SearchItemCategory = .All
+    public static var categoryToSearch: SearchItemCategory = .All {
+        didSet {
+            categoryChangedFlag = true
+        }
+    }
+    
+    public static var categoryChangedFlag: Bool = true
+    
+    private static var itemCardsArray = [ItemCardStore?](repeating: nil, count: SearchItemCategory.count)
     
     static func saveUser() {
         UserDefaults.standard.set(user?.toDictionary(), forKey: "CurrentUser")
@@ -194,7 +212,7 @@ class DataSource {
         let la = "\(latitude)"
         let lo = "\(longitude)"
         
-        DataManager.getItems(idToken: idToken, latitude: la, longitude: lo, category: categoryToSearch) { response in
+        DataManager.getItems(idToken: idToken, latitude: la, longitude: lo, category: categoryToSearch, gender: (user as! CustomerUser).gender) { response in
             
             if let items = response as? ItemCardStore {
                 if itemCards == nil {

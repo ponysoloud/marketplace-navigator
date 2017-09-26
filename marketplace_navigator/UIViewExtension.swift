@@ -42,4 +42,17 @@ extension UIView {
         layer.shadowRadius = shadowRadius
     }
     
+    
+    @discardableResult
+    func fromNib<T : UIView>() -> T? {
+        guard let view = Bundle.main.loadNibNamed(String(describing: type(of: self)), owner: self, options: nil)?[0] as? T else {
+            return nil
+        }
+        
+        //view.translatesAutoresizingMaskIntoConstraints = false
+        view.frame = bounds
+        self.addSubview(view)
+        return view
+    }
+    
 }

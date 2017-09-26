@@ -19,7 +19,6 @@ class CustomerItemsChoosingViewController: UIViewController, CLLocationManagerDe
     
     @IBOutlet weak var errorTitleLabel: UILabel!
     
-    
     var locationManager = CLLocationManager()
     
     override func viewDidLoad() {
@@ -57,8 +56,6 @@ class CustomerItemsChoosingViewController: UIViewController, CLLocationManagerDe
             errorTitleLabel.text = "Has no acception to your location. Please accept it in \"Settings\""
             hideKolodaUI()
             
-            print("hide#1")
-            
             return
         }
         
@@ -67,27 +64,21 @@ class CustomerItemsChoosingViewController: UIViewController, CLLocationManagerDe
             errorTitleLabel.text = "Location services are currently unavailable"
             hideKolodaUI()
             
-            print("hide#2")
             return
         }
         
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
         locationManager.distanceFilter = 500;
-        //locationManager.startUpdatingLocation()
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         print("update")
         
         if status != .authorizedAlways && status != .authorizedWhenInUse {
-            // Change UI
             errorTitleLabel.text = "Has no acception to your location. Please accept it in \"Settings\""
             hideKolodaUI()
-            
-            print("hide#3")
         } else {
-            // Change UI
             showKolodaUI()
         }
     }
@@ -95,35 +86,42 @@ class CustomerItemsChoosingViewController: UIViewController, CLLocationManagerDe
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         locationManager.stopUpdatingLocation()
         
+        // Call HUD
+        showHud()
+        
+        // Make request
         DataSource.getItems(idToken: DataSource.user!.idToken, location: locations.last!) { success in
             
             if success {
-                if (self.kolodaView.dataSource == nil) {
+                
+                if DataSource.categoryChangedFlag {
                     self.kolodaView.dataSource = DataSource.itemCards!
+                    self.kolodaView.resetCurrentCardIndex()
+                    
+                    DataSource.categoryChangedFlag = false
                 }
                 
+                // Hide HUD
+                self.hideHUD()
+                
+                // Insert new cards
                 let pos = self.kolodaView.currentCardIndex
                 let newPos = DataSource.itemCards!.transfer()
                 self.kolodaView.insertCardAtIndexRange(pos..<pos + newPos, animated: true)
-                /*
-                DataSource.itemCards!.transfer()
-                self.kolodaView.reloadData()
-                */
-                
+
+                // Show message if all cards was fallen
                 if self.kolodaView.isRunOutOfCards {
                     self.errorTitleLabel.text = "Found nothing. Please change searching category or move to another location"
                     self.hideKolodaUI()
                 } else {
                     self.showKolodaUI()
                 }
-                
-                
             } else {
-                // Change UI
+                // Hide HUD
+                self.hideHUD()
+                
                 self.errorTitleLabel.text = "Connection problem. Please try again later"
                 self.hideKolodaUI()
-                
-                print("hide#4")
             }
         }
     }
@@ -147,11 +145,6 @@ extension CustomerItemsChoosingViewController: KolodaViewDelegate {
     
     func kolodaDidRunOutOfCards(_ koloda: KolodaView) {
         locationManager.startUpdatingLocation()
-        /*
-        let pos = kolodaView.currentCardIndex
-        let newPos = DataSource.itemCards!.transfer()
-        kolodaView.insertCardAtIndexRange(pos..<pos + newPos, animated: true)
-         */
     }
     
     func koloda(_ koloda: KolodaView, didSelectCardAt index: Int) {

@@ -16,7 +16,6 @@ class DataManager {
         let urlAll = "https://marketplace-navigator-server.herokuapp.com/" + url
         
         Alamofire.request(urlAll, method: method, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
-            //debugPrint(response)
             
             if let result = response.result.value {
                 let JSON = result as? Dictionary<String, Any>
@@ -82,8 +81,8 @@ class DataManager {
         }
     }
     
-    class func getItems(idToken: String, latitude: String, longitude: String, category: SearchItemCategory, completion: @escaping (CustomResponse) -> Void) {
-        DataManager.request(url: "getitems", method: .post, parameters: ["idToken": idToken, "latitude": latitude, "longitude": longitude, "category": category.rawValue]) { json in
+    class func getItems(idToken: String, latitude: String, longitude: String, category: SearchItemCategory, gender: Gender, completion: @escaping (CustomResponse) -> Void) {
+        DataManager.request(url: "getitems", method: .post, parameters: ["idToken": idToken, "latitude": latitude, "longitude": longitude, "category": category.rawValue, "gender": gender.rawValue]) { json in
             
             let response = CustomResponse.create(params: [:], json: json)
             completion(response)

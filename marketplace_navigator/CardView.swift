@@ -6,23 +6,7 @@
 //  Copyright © 2017 Base team. All rights reserved.
 //
 
-import Foundation
 import UIKit
-
-extension UIView {
-    
-    @discardableResult
-    func fromNib<T : UIView>() -> T? {
-        guard let view = Bundle.main.loadNibNamed(String(describing: type(of: self)), owner: self, options: nil)?[0] as? T else {
-            return nil
-        }
-        
-        //view.translatesAutoresizingMaskIntoConstraints = false
-        view.frame = bounds
-        self.addSubview(view)
-        return view
-    }
-}
 
 class CardView: UIView {
     

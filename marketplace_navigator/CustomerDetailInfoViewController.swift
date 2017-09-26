@@ -67,7 +67,7 @@ class CustomerDetailInfoViewController: UIViewController {
     }
     
     @IBAction func removeItem(_ sender: UIButton) {
-        showHud("Loading")
+        showHud()
         sender.isUserInteractionEnabled = false
         
         DataSource.dislikeItem(idToken: DataSource.user!.idToken, item: itemId!) {

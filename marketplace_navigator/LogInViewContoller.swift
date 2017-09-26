@@ -81,7 +81,7 @@ class LogInViewContoller: UIViewController, UITextFieldDelegate {
             
             if let errorInfo = error?.getInfo() {
                 
-                let alert = UIAlertController(title: "Title", message: errorInfo.1, preferredStyle: UIAlertControllerStyle.alert)
+                let alert = UIAlertController(title: "Error", message: errorInfo.1, preferredStyle: UIAlertControllerStyle.alert)
                 
                 alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
                 
