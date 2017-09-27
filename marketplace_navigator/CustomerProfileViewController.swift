@@ -87,11 +87,26 @@ class CustomerProfileViewController: UIViewController, UIImagePickerControllerDe
     }
     
     @IBAction func exitUser(_ sender: UIBarButtonItem) {
-        DataSource.removeUser()
+        let alert = UIAlertController(title: "Alert", message: "Do you want to leave current account?", preferredStyle: UIAlertControllerStyle.alert)
         
-        let storyboard = UIStoryboard(name: "Authorization", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "entryVC")
-        self.present(vc, animated: true)
+        let yesAction = UIAlertAction(title: "Yes", style: .default) {
+            _ in
+            
+            DataSource.removeUser()
+            
+            let storyboard = UIStoryboard(name: "Authorization", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "entryVC")
+            self.present(vc, animated: true)
+        }
+        
+        let noAction = UIAlertAction(title: "No", style: .default) {
+            (result : UIAlertAction) -> Void in
+        }
+        
+        alert.addAction(yesAction)
+        alert.addAction(noAction)
+        
+        self.present(alert, animated: true, completion: nil)
     }
     
 }

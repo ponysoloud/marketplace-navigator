@@ -45,7 +45,7 @@ class DataManager {
     
     class func signUp(email: String, password: String, name: String, gender: Gender, completion: @escaping (CustomResponse) -> Void) {
         
-        DataManager.request(url: "signup/customer", method: .post, parameters: ["email":email, "password":password, "name": name, "gender": gender.rawValue]) {
+        DataManager.request(url: "signup", method: .post, parameters: ["email":email, "password":password, "name": name, "gender": gender.rawValue]) {
             json in
             
             let response = CustomResponse.create(params: ["email":email, "password":password] , json: json)

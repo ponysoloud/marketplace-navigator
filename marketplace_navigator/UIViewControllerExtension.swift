@@ -7,12 +7,13 @@
 //
 
 import Foundation
-import MBProgressHUD
+import UIKit
 
 extension UIViewController {
-    
+
     func showHud() {
         LoadingHud.showAdded(to: self.view)
+        
         view.isUserInteractionEnabled = false
     }
     

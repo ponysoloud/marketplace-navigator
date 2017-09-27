@@ -10,7 +10,8 @@ import UIKit
 
 class LoadingHud {
     
-    class func showAdded(to view: UIView) {
+    @discardableResult
+    class func showAdded(to view: UIView) -> AnimationView {
         let hud = AnimationView(frame: CGRect(x: 0, y: 0, width: 70, height: 70))
             hud.center = view.center
             hud.center.y -= 50
@@ -21,6 +22,13 @@ class LoadingHud {
             hud.startAnimating()
         
         view.addSubview(hud)
+        
+        return hud
+    }
+    
+    class func showAdded(to view: UIView, in center: CGPoint) {
+        let hud = showAdded(to: view)
+            hud.center = center
     }
     
     class func hide(at view: UIView) {

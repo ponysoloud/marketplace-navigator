@@ -99,6 +99,9 @@ class DataSource {
     
     static func removeUser() {
         user = nil
+        categoryChangedFlag = true
+        itemCardsArray = [ItemCardStore?](repeating: nil, count: SearchItemCategory.count)
+        
         UserDefaults.standard.removeObject(forKey: "CurrentUser")
         UserDefaults.standard.removeObject(forKey: "CurrentUserProfileImage")
         UserDefaults.standard.synchronize()

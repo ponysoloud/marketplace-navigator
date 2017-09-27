@@ -72,6 +72,7 @@ class CustomerDetailInfoViewController: UIViewController {
         
         DataSource.dislikeItem(idToken: DataSource.user!.idToken, item: itemId!) {
             if $0 {
+                
                 self.hideHUD()
                 sender.isUserInteractionEnabled = false
                 

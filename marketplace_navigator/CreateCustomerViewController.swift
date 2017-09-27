@@ -39,14 +39,30 @@ class CreateCustomerViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func signUpButton(_ sender: Any) {
         
+        showHud()
+        
         let tempRaw = genderTextField.text!.lowercased()
         let gender = Gender(rawValue: tempRaw)
         
         DataSource.createUser(email: mailTextField.text!, password: passwordTextField.text!, name: nameTextField.text!, gender: gender!) {
             success, error in
             
+            self.hideHUD()
+            
             if success {
-                print(success)
+                
+                let storyboard = UIStoryboard(name: "CustomerInterface", bundle: nil)
+                let vc = storyboard.instantiateViewController(withIdentifier: "entryVC")
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+            
+            if let errorInfo = error?.getInfo() {
+                
+                let alert = UIAlertController(title: "Error", message: errorInfo.1, preferredStyle: UIAlertControllerStyle.alert)
+                
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+                
+                self.present(alert, animated: true, completion: nil)
             }
             
         }
