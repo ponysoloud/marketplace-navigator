@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Shop: GoodResponse, Jsonable, Comparable {
+class Shop: Jsonable, Comparable {
     
     var id: String = ""
     
