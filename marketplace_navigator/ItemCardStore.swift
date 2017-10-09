@@ -32,7 +32,7 @@ class ItemCardStore: GoodResponse {
                 let card = ItemCard(json: temp)
                     card.id = i.key
                 
-                if !(DataSource.user! as! CustomerUser).likedItems.contains(item: card) {
+                if !(DataSource.shared().user! as! CustomerUser).likedItems.contains(item: card) {
                     self.buffer.append(card)
                 }
             }
@@ -54,7 +54,7 @@ class ItemCardStore: GoodResponse {
     func append(store: ItemCardStore) {
         for i in store.cards {
             if !self.contains(item: i) {
-                if !(DataSource.user! as! CustomerUser).likedItems.contains(item: i) {
+                if !(DataSource.shared().user! as! CustomerUser).likedItems.contains(item: i) {
                     self.buffer.append(i)
                 }
             }

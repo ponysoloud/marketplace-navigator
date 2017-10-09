@@ -61,7 +61,7 @@ class LogInViewContoller: UIViewController, UITextFieldDelegate {
         
         loadingImageView.startAnimating()
         
-        DataSource.loadUser(email: mailTextField.text!, password: passwordTextField.text!) { success, error in
+        DataSource.shared().loadUser(email: mailTextField.text!, password: passwordTextField.text!) { success, error in
             
             self.loadingImageView.stopAnimating()
             
@@ -69,7 +69,7 @@ class LogInViewContoller: UIViewController, UITextFieldDelegate {
                 
                 var storyboardName: String = "CustomerInterface"
                 
-                if DataSource.user is SellerUser {
+                if DataSource.shared().user is SellerUser {
                     storyboardName = "SellerInterface"
                 }
                 

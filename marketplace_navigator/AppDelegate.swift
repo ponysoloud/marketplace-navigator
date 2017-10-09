@@ -12,20 +12,17 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        //DataSource.removeUser()
-        
         var storyboardName: String = "Authorization"
         
-        if DataSource.checkUserInMemory() {
-            DataSource.loadUser { success, error in
+        if DataSource.shared().checkMemory() {
+            DataSource.shared().loadUser { success, error in
                 
                 if success {
-                    if let _ = DataSource.user as? SellerUser {
+                    if let _ = DataSource.shared().user as? SellerUser {
                         storyboardName = "SellerInterface"
                     } else {
                         storyboardName = "CustomerInterface"

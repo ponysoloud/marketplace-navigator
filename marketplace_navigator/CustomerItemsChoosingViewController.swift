@@ -90,15 +90,15 @@ class CustomerItemsChoosingViewController: UIViewController, CLLocationManagerDe
         showHud()
         
         // Make request
-        DataSource.getItems(idToken: DataSource.user!.idToken, location: locations.last!) { success in
+        DataSource.shared().getItems(by: locations.last!) { success in
             
             if success {
                 
-                if DataSource.categoryChangedFlag {
-                    self.kolodaView.dataSource = DataSource.itemCards!
+                if DataSource.shared().categoryChangedFlag {
+                    self.kolodaView.dataSource = DataSource.shared().itemCards!
                     self.kolodaView.resetCurrentCardIndex()
                     
-                    DataSource.categoryChangedFlag = false
+                    DataSource.shared().categoryChangedFlag = false
                 }
                 
                 // Hide HUD
@@ -106,7 +106,7 @@ class CustomerItemsChoosingViewController: UIViewController, CLLocationManagerDe
                 
                 // Insert new cards
                 let pos = self.kolodaView.currentCardIndex
-                let newPos = DataSource.itemCards!.transfer()
+                let newPos = DataSource.shared().itemCards!.transfer()
                 self.kolodaView.insertCardAtIndexRange(pos..<pos + newPos, animated: true)
 
                 // Show message if all cards was fallen
@@ -153,9 +153,9 @@ extension CustomerItemsChoosingViewController: KolodaViewDelegate {
     
     func koloda(_ koloda: KolodaView, didSwipeCardAt index: Int, in direction: SwipeResultDirection) {
         if direction == .right {
-            let item = DataSource.itemCards![index]
-            DataSource.likeItem(idToken: DataSource.user!.idToken, host: item.hostKey, shop: item.shopId, item: item.id) {
-                if $0 { (DataSource.user as! CustomerUser).likedItems.add(item: item) }
+            let item = DataSource.shared().itemCards![index]
+            DataSource.shared().likeItem(host: item.hostKey, shop: item.shopId, item: item.id) {
+                if $0 { (DataSource.shared().user as! CustomerUser).likedItems.add(item: item) }
             }
             
         }

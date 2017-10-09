@@ -36,7 +36,6 @@ class User: GoodResponse {
     var email: String = ""
     var password: String = ""
     var profileImage: UIImage? {
-        
         get {
             if let image = UserDefaults.standard.object(forKey: "CurrentUserProfileImage") as? NSData {
                 return UIImage(data: image as Data)

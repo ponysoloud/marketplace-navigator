@@ -38,13 +38,7 @@ class CreateSellerViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func signUpButton(_ sender: Any) {
         
-        DataSource.createUser(email: mailTextField.text!, password: passwordTextField.text!, name: shopNameTextField.text!) {
-            success, error in
-            
-            if success {
-                print(success)
-            }
-        }
+        
         
     }
     

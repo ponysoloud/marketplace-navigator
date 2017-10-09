@@ -25,11 +25,11 @@ class CustomerUserGoodsTableViewController: UITableViewController, CustomStorage
         tableView.scrollIndicatorInsets = insets
         tableView.tableFooterView = UIView(frame: .zero)
         
-        (DataSource.user as! CustomerUser).likedItems.delegate = self
+        (DataSource.shared().user as! CustomerUser).likedItems.delegate = self
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let count = (DataSource.user as! CustomerUser).likedItems.count
+        let count = (DataSource.shared().user as! CustomerUser).likedItems.count
         if count == 0 { tableView.backgroundView = emptyTableNotifyView }
         else { tableView.backgroundView = nil }
         
@@ -38,7 +38,7 @@ class CustomerUserGoodsTableViewController: UITableViewController, CustomStorage
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let item = (DataSource.user as! CustomerUser).likedItems[indexPath.row]
+        let item = (DataSource.shared().user as! CustomerUser).likedItems[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "LikedItemCell", for: indexPath) as! CustomerItemCell
         
         cell.setValues(card: item)
@@ -46,13 +46,13 @@ class CustomerUserGoodsTableViewController: UITableViewController, CustomStorage
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let item = (DataSource.user as! CustomerUser).likedItems[indexPath.row]
+        let item = (DataSource.shared().user as! CustomerUser).likedItems[indexPath.row]
         selectedCellViewController?.setValues(with: item)
         selectedCellViewController?.itemIndexPathOnTableView = indexPath
     }
     
     func removeItem(at indexPath: IndexPath) {
-        (DataSource.user as! CustomerUser).likedItems.remove(at: indexPath.row)
+        (DataSource.shared().user as! CustomerUser).likedItems.remove(at: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: .automatic)
     }
     

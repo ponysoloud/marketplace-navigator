@@ -47,7 +47,7 @@ class BadResponse: CustomResponse {
     init(json: [String : Any]) {
         
         print(json)
-        
+ 
         if let code = json["code"] as? String {
             self.code = code
         }

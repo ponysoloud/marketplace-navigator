@@ -70,7 +70,7 @@ class CustomerDetailInfoViewController: UIViewController {
         showHud()
         sender.isUserInteractionEnabled = false
         
-        DataSource.dislikeItem(idToken: DataSource.user!.idToken, item: itemId!) {
+        DataSource.shared().removeLiked(item: itemId!) {
             if $0 {
                 
                 self.hideHUD()

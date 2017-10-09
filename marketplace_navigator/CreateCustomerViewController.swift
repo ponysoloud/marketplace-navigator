@@ -44,7 +44,7 @@ class CreateCustomerViewController: UIViewController, UITextFieldDelegate {
         let tempRaw = genderTextField.text!.lowercased()
         let gender = Gender(rawValue: tempRaw)
         
-        DataSource.createUser(email: mailTextField.text!, password: passwordTextField.text!, name: nameTextField.text!, gender: gender!) {
+        DataSource.shared().createUser(email: mailTextField.text!, password: passwordTextField.text!, name: nameTextField.text!, gender: gender!) {
             success, error in
             
             self.hideHUD()

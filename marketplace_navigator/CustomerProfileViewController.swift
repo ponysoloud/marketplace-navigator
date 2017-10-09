@@ -41,16 +41,16 @@ class CustomerProfileViewController: UIViewController, UIImagePickerControllerDe
         
         imagePicker.delegate = self
         
-        if let profImage = DataSource.user?.profileImage { profileImageView.image = profImage }
+        if let profImage = DataSource.shared().user?.profileImage { profileImageView.image = profImage }
         
-        profileNameLabel.text = DataSource.user?.name
+        profileNameLabel.text = DataSource.shared().user?.name
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             profileImageView.image = pickedImage
-            DataSource.user?.profileImage = pickedImage
+            DataSource.shared().user?.profileImage = pickedImage
         }
         
         dismiss(animated: true, completion: nil)
@@ -64,7 +64,7 @@ class CustomerProfileViewController: UIViewController, UIImagePickerControllerDe
     @IBAction func paramTextField(_ sender: UITextField) {
         showChoiceMenu(title: "Choose category", items: ["All", "Shoes", "Underwear", "Denim", "Jackets", "Shirts", "Trousers"], todo: { item in
             sender.text = item
-            DataSource.categoryToSearch = SearchItemCategory(rawValue: item.lowercased())!
+            DataSource.shared().categoryToSearch = SearchItemCategory(rawValue: item.lowercased())!
         })
     }
     
@@ -92,7 +92,8 @@ class CustomerProfileViewController: UIViewController, UIImagePickerControllerDe
         let yesAction = UIAlertAction(title: "Yes", style: .default) {
             _ in
             
-            DataSource.removeUser()
+            DataSource.shared().removeFromMemory()
+            DataSource.reset()
             
             let storyboard = UIStoryboard(name: "Authorization", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "entryVC")
