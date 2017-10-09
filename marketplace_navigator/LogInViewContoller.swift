@@ -67,16 +67,9 @@ class LogInViewContoller: UIViewController, UITextFieldDelegate {
             
             if success {
                 
-                var storyboardName: String = "CustomerInterface"
-                
-                if DataSource.shared().user is SellerUser {
-                    storyboardName = "SellerInterface"
-                }
-                
-                let storyboard = UIStoryboard(name: storyboardName, bundle: nil)
+                let storyboard = UIStoryboard(name: "CustomerInterface", bundle: nil)
                 let vc = storyboard.instantiateViewController(withIdentifier: "entryVC")
                 self.navigationController?.pushViewController(vc, animated: true)
-                
             }
             
             if let errorInfo = error?.getInfo() {

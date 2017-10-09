@@ -121,7 +121,7 @@ class CustomTabBar: UIView {
     }
     
     // Action: change showing viewController index in customTabBarController
-    func barItemTapped(sender: UIButton) {
+    @objc func barItemTapped(sender: UIButton) {
         
         // Get index of tapped tab bar button
         let index = tabBarButtons.index(of: sender)!
