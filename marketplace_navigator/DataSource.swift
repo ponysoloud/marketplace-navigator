@@ -9,6 +9,8 @@
 import Foundation
 import CoreLocation
 
+typealias Json = [String: Any]
+
 class DataSource {
     
     var user: User?
@@ -61,7 +63,6 @@ extension DataSource: DataSourceControls {
     }
     
     func removeFromMemory() {
-        
         UserDefaults.standard.removeObject(forKey: "CurrentUser")
         UserDefaults.standard.removeObject(forKey: "CurrentUserProfileImage")
         UserDefaults.standard.synchronize()

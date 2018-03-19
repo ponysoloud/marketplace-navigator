@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Bpy-ic-JGu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Bpy-ic-JGu">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -88,7 +88,6 @@
                             <constraint firstItem="9iy-gL-PLH" firstAttribute="leading" secondItem="Jez-Ej-IHf" secondAttribute="leading" id="Hqs-OB-8Dh"/>
                             <constraint firstAttribute="trailing" secondItem="N8G-Ev-dsW" secondAttribute="trailing" id="IQi-dT-P8F"/>
                             <constraint firstItem="N8G-Ev-dsW" firstAttribute="leading" secondItem="Jez-Ej-IHf" secondAttribute="leading" id="KzU-sv-KIX"/>
-                            <constraint firstItem="9iy-gL-PLH" firstAttribute="top" secondItem="E6e-dj-wLn" secondAttribute="bottom" id="ObI-VW-nTR"/>
                             <constraint firstItem="UE2-Ip-vlW" firstAttribute="centerX" secondItem="Jez-Ej-IHf" secondAttribute="centerX" id="Odt-0Q-Q3b"/>
                             <constraint firstItem="IoF-ah-9dq" firstAttribute="top" secondItem="UE2-Ip-vlW" secondAttribute="bottom" constant="84" id="R2A-yG-YsD"/>
                             <constraint firstAttribute="trailingMargin" secondItem="RW6-Lk-fCB" secondAttribute="trailing" constant="76" id="ReZ-Ha-GfW"/>
@@ -96,6 +95,7 @@
                             <constraint firstItem="RW6-Lk-fCB" firstAttribute="leading" secondItem="Jez-Ej-IHf" secondAttribute="leadingMargin" constant="77" id="WNh-RA-gxi"/>
                             <constraint firstItem="2V2-PY-UDZ" firstAttribute="centerX" secondItem="Jez-Ej-IHf" secondAttribute="centerX" id="eVg-Ai-efw"/>
                             <constraint firstAttribute="trailing" secondItem="9iy-gL-PLH" secondAttribute="trailing" id="f3l-QH-k3W"/>
+                            <constraint firstItem="9iy-gL-PLH" firstAttribute="top" secondItem="E6e-dj-wLn" secondAttribute="bottom" id="hq8-wn-m4w"/>
                             <constraint firstItem="bVr-4g-7G4" firstAttribute="top" secondItem="RW6-Lk-fCB" secondAttribute="bottom" constant="10" id="qaj-2f-ayA"/>
                             <constraint firstItem="bVr-4g-7G4" firstAttribute="bottom" secondItem="N8G-Ev-dsW" secondAttribute="bottom" constant="-130" id="qhB-c0-0C8"/>
                             <constraint firstItem="N8G-Ev-dsW" firstAttribute="top" secondItem="Jez-Ej-IHf" secondAttribute="top" id="txo-Eq-Ksn"/>
@@ -156,7 +156,7 @@
                                 </constraints>
                             </view>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Some troubles message message message" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mDf-H8-idG">
-                                <rect key="frame" x="61" y="160" width="198" height="168"/>
+                                <rect key="frame" x="61" y="160" width="198" height="119"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.25626070205479451" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>

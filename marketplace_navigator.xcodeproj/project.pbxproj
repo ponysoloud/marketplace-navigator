@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9303135F1F93EDB200BAFE2C /* CustomResponseResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9303135E1F93EDB200BAFE2C /* CustomResponseResult.swift */; };
 		932120A21F34B5FE00E8BE50 /* Authorization.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 932120A11F34B5FE00E8BE50 /* Authorization.storyboard */; };
 		932120A81F34C48B00E8BE50 /* CreateCustomerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932120A71F34C48B00E8BE50 /* CreateCustomerViewController.swift */; };
 		93625AA91F6F1AFB00FB3323 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93625AA81F6F1AFB00FB3323 /* UIImageExtension.swift */; };
@@ -60,6 +61,7 @@
 /* Begin PBXFileReference section */
 		00C18AC5E390CF7D16F8D703 /* Pods-marketplace_navigator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-marketplace_navigator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-marketplace_navigator/Pods-marketplace_navigator.debug.xcconfig"; sourceTree = "<group>"; };
 		5F3B769725F15EE3AE4E5190 /* Pods_marketplace_navigator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_marketplace_navigator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9303135E1F93EDB200BAFE2C /* CustomResponseResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomResponseResult.swift; sourceTree = "<group>"; };
 		932120A11F34B5FE00E8BE50 /* Authorization.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Authorization.storyboard; sourceTree = "<group>"; };
 		932120A71F34C48B00E8BE50 /* CreateCustomerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateCustomerViewController.swift; sourceTree = "<group>"; };
 		93625AA81F6F1AFB00FB3323 /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
@@ -181,14 +183,12 @@
 				93ADFBAF1F31FCF700692060 /* DataSource.swift */,
 				93E22B611F8BF96C00865135 /* DataSourceControls.swift */,
 				93E22B5F1F8BF44D00865135 /* ModelEnums.swift */,
+				9303135E1F93EDB200BAFE2C /* CustomResponseResult.swift */,
 				93ADFBAD1F31ED3300692060 /* CustomResponse.swift */,
-				93ADFBA01F31DB0900692060 /* User.swift */,
-				93ADFBA21F31DB1F00692060 /* SellerUser.swift */,
-				93ADFBA41F31DF0900692060 /* CustomerUser.swift */,
+				93E22B631F8C215B00865135 /* User */,
 				937DE7A61F609F0900AFED6C /* Shop.swift */,
 				93CA25EB1F3B63D700D4B0B8 /* Item.swift */,
-				937DE7AC1F68833800AFED6C /* CustomStorage.swift */,
-				937DE7AE1F68837B00AFED6C /* CustomStorageDelegate.swift */,
+				93E22B641F8C216B00865135 /* CustomStorage */,
 				9367F3771F45F79D00985E97 /* ItemCard.swift */,
 				9367F3791F45F8C500985E97 /* ItemCardStore.swift */,
 				9367F3701F4356CB00985E97 /* Location.swift */,
@@ -259,6 +259,25 @@
 				9367F3721F435FA200985E97 /* Customer */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		93E22B631F8C215B00865135 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				93ADFBA01F31DB0900692060 /* User.swift */,
+				93ADFBA21F31DB1F00692060 /* SellerUser.swift */,
+				93ADFBA41F31DF0900692060 /* CustomerUser.swift */,
+			);
+			name = User;
+			sourceTree = "<group>";
+		};
+		93E22B641F8C216B00865135 /* CustomStorage */ = {
+			isa = PBXGroup;
+			children = (
+				937DE7AC1F68833800AFED6C /* CustomStorage.swift */,
+				937DE7AE1F68837B00AFED6C /* CustomStorageDelegate.swift */,
+			);
+			name = CustomStorage;
 			sourceTree = "<group>";
 		};
 		9A6081059B9236EFFC4100D1 /* Pods */ = {
@@ -412,6 +431,7 @@
 				93E22B601F8BF44D00865135 /* ModelEnums.swift in Sources */,
 				93EC1A291F75512D00D6C7D7 /* UIViewControllerExtension.swift in Sources */,
 				9367F38D1F509FA500985E97 /* CustomerItemCell.swift in Sources */,
+				9303135F1F93EDB200BAFE2C /* CustomResponseResult.swift in Sources */,
 				93EC1A271F74866400D6C7D7 /* CustomTabBarItem.swift in Sources */,
 				93625AAB1F6F1B0600FB3323 /* CGImageExtension.swift in Sources */,
 				9367F3761F44BB8300985E97 /* UIDeviceExtension.swift in Sources */,

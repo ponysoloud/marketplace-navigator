@@ -11,25 +11,6 @@ import CoreLocation
 
 class Location: GoodResponse {
     
-    static func getCountry(location: CLLocation, completion: @escaping (String?, Error?) -> Void){
-        let geoCoder = CLGeocoder()
-        
-        geoCoder.reverseGeocodeLocation(location) { placemarks, error in
-            
-            if let e = error {
-                completion(nil, e)
-            } else {
-                let placeMark = placemarks?[0]
-                guard let countryCode = placeMark?.isoCountryCode else {
-                    return
-                }
-                
-                completion(countryCode, nil)
-            }
-        }
-    }
-    
-    
     var location: CLLocation
     
     init(_ json: [String: Any]) {
