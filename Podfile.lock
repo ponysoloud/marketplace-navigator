@@ -1,6 +1,6 @@
 PODS:
-  - Alamofire (4.5.0)
-  - Koloda (4.1):
+  - Alamofire (4.7.2)
+  - Koloda (4.3.1):
     - pop (~> 1.0)
   - pop (1.0.10)
 
@@ -8,11 +8,17 @@ DEPENDENCIES:
   - Alamofire (~> 4.4)
   - Koloda
 
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Alamofire
+    - Koloda
+    - pop
+
 SPEC CHECKSUMS:
-  Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
-  Koloda: 6c4fa3ce9a68776a8ef973311e53fdda432799a8
+  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  Koloda: 0d39b2aa188ccd1fac48d752acaf9802e683c625
   pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
 
 PODFILE CHECKSUM: 271bd5484396d557066150e5db0590652bb211e1
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.5.0
